@@ -42,16 +42,16 @@ int main(int argc, char** argv) {
     while (fscanf(mapFile, "%d %d\n", &cities[i].x, &cities[i].y) == 2) {
         i++;
     }
-    initPopulation(&population, 10, 10);
+    initPopulation(&population, numOfPopulation, numOfCities);
 
-    int fittest = getFittest(cities, &population, 10);
+    int fittest = getFittest(cities, &population, numOfPopulation, numOfCities);
     Tour eliteTour = population.tours[fittest];
     printf("The best is: %d with a distance of %f\n", fittest, eliteTour.distance);
 
     for (generation = 0; generation < maxGeneration; generation++) {
         evolvePopulation(&population, numOfPopulation, numOfCities, eliteTour, cities, generation);
         mutatePopulation(&population, numOfPopulation, numOfCities);
-        fittest = getFittest(cities, &population, 10);
+        fittest = getFittest(cities, &population, numOfPopulation, numOfCities);
         eliteTour = population.tours[fittest];
         printf("The best is: %d with a distance of %f\n", fittest, population.tours[fittest].distance);
     }
