@@ -19,6 +19,8 @@ extern "C" {
         int fittest;
     }Population;
     
+    int getFittest(City*, Population*, int);
+    void evolvePopulation(Population*, int, int, Tour, City*, int);
     void initPopulation(Population*, int, int);
     //int getFittest(Population*, int );
 

@@ -21,7 +21,7 @@ void printArray(int arr[], int n) {
 
 void shuffle(int *array, size_t n)
  {
-    srand(time(NULL));
+   
     if (n > 1) {
         size_t i;
         for (i = 0; i < n - 1; i++) {
@@ -33,16 +33,32 @@ void shuffle(int *array, size_t n)
     }
 }
 
+void shuffle2(int *array, size_t n, int multiplier)
+ {
+    
+    if (n > 1) {
+        size_t i;
+        for (i = 0; i < n - 1; i++) {
+            size_t j = i + multiplier / (RAND_MAX / (n - i) + 1);
+            int t = array[j];
+            array[j] = array[i];
+            array[i] = t;
+        }
+    }
+}
+
 double getDistance(City* cities, Tour* tour, int max) {
     int count = 0, section = 0;
     double distance = 0;
     City start, end;
+    //printf("the path is: ");
+    printArray(tour->path, 10);
 
-    for (count = 0; count < max; count++) {
+    for (count = 0; count < max - 1; count++) {
         start = cities[tour->path[count]];
+        //printf("city value: %d %d\n", max, tour->path[count + 1]);
         end = cities[tour->path[count + 1]];
         section = (end.x - start.x) + (end.y - start.y);
-        printf("Section is : %f\n", sqrt(abs(section)));
         distance += sqrt(abs(section));
     }
 
@@ -51,6 +67,7 @@ double getDistance(City* cities, Tour* tour, int max) {
 
 void createPath(Tour* tour, int max) {
     int count = 0;
+    
     
     //tour = malloc(sizeof (Tour) + max * sizeof (int));
     //tour->path[0] = 22;

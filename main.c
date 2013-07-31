@@ -15,40 +15,16 @@
 //global variables
 
 City cities[10];
-Tour tour;
-Tour * ptrTour = &tour;
 Population population;
 Population * ptrPopulation = &population;
 
-/*
- * 
- */
-
-
-
-
-
-
-int getFittest(int size) {
-    int count = 4;
-    population.fittest = 0;
-    for (count = 0; count < size; count++) {
-    
-    printArray(population.tours[count].path, 10);
-        
-        population.tours[count].distance = getDistance(cities, &population.tours[count], 10);
-        printf("This is the float: %f\n", population.tours[count].distance);
-        if( population.tours[count].distance < population.tours[population.fittest].distance) {
-            population.fittest = count;
-            
-        }
-    }
-    return population.fittest;
-}
-
-
 int main(int argc, char** argv) {
     FILE* mapFile;
+    int generation = 0;
+    int maxGeneration = 0;
+    
+    srand ( time(NULL) );
+    
 
     int x = 0, y = 0, i = 0;
 
@@ -57,6 +33,7 @@ int main(int argc, char** argv) {
         if (mapFile == NULL) {
             return 2;
         }
+        maxGeneration = atoi(argv[2]);
     }
 
     while (fscanf(mapFile, "%d %d\n", &cities[i].x, &cities[i].y) == 2) {
@@ -64,11 +41,22 @@ int main(int argc, char** argv) {
         i++;
     }
     initPopulation(ptrPopulation, 10, 10);
-    
-    int fittest = getFittest(10);
-    
-    
-    printf("The best is: %d with a distance of %f", fittest, population.tours[fittest].distance);
+
+    int fittest = getFittest(cities, ptrPopulation, 10);
+    printf("The best is: %d with a distance of %f\n", fittest, population.tours[fittest].distance);
+    Tour eliteTour = population.tours[fittest];
+    for (generation = 0; generation < maxGeneration; generation++) {
+        evolvePopulation(ptrPopulation, 10, 10, eliteTour, cities, generation);
+        fittest = getFittest(cities, ptrPopulation, 10);
+        eliteTour = population.tours[fittest];
+        printf("The best is: %d with a distance of %f\n", fittest, population.tours[fittest].distance);
+
+    }
+
+
+
+
+
 
 
 

@@ -31,8 +31,10 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" 10  5</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 10  5 workfile.map</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" workfile.map</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" workfile.map 2</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" workfile.map 5</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" workfile.map</runcommand>
+        <runcommand>"${OUTPUT_PATH}" workfile.map 5</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
