@@ -8,11 +8,8 @@ int getFittest(City* cities, Population* population, int size) {
     int count = 4;
     population->fittest = 0;
     for (count = 0; count < size; count++) {
-
-        //printArray(population->tours[count].path, 10);
-
         population->tours[count].distance = getDistance(cities, &population->tours[count], 10);
-        printf("This is the float: %f\n", population->tours[count].distance);
+        printf("Total length for %d: %f\n",count, population->tours[count].distance);
         if (population->tours[count].distance < population->tours[population->fittest].distance) {
             population->fittest = count;
 
@@ -47,17 +44,11 @@ Tour tournament(int size, int max, City* cities) {
 void evolvePopulation(Population* population, int size, int max, Tour elite, City* cities, int generation) {
     int count = 0, index = 0, mutator = 0;
     Tour parent1, parent2;
-    printf("hello evolve\n");
+   
      
     initPopulation(population, size, max);
     for(count = 1; count < size; count++) {
-
-                
-        //while(generation > 0) {
-            shuffle2(population->tours[count].path, max, generation);
-            //generation--;
-       // }
-       
+        shuffle(population->tours[count].path, max);
     }
     population->tours[0] = elite;
     
@@ -76,7 +67,6 @@ void evolvePopulation(Population* population, int size, int max, Tour elite, Cit
     }
 */
     
-    printf("goodbye evolve\n");
     
     
 }

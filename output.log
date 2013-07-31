@@ -8,1006 +8,444 @@
 38 8
 82 8
 1 90
-4 2 6 3 0 9 7 1 8 5 
-This is the float: 63.167350
-6 0 8 5 1 9 2 7 3 4 
-This is the float: 56.755068
-6 0 5 8 3 9 1 2 7 4 
-This is the float: 55.476534
-4 9 1 2 5 0 6 7 3 8 
-This is the float: 56.155851
-3 6 1 0 5 4 8 9 7 2 
-This is the float: 51.566816
-5 0 4 8 2 9 6 3 7 1 
-This is the float: 55.727521
-1 7 3 6 8 9 0 5 4 2 
-This is the float: 54.746141
-7 3 8 6 5 1 9 2 4 0 
-This is the float: 63.676319
-6 5 9 1 7 0 4 8 2 3 
-This is the float: 60.964141
-6 5 4 7 2 9 0 3 8 1 
-This is the float: 63.980949
-The best is: 4 with a distance of 51.566816
-hello evolve
-goodbye evolve
-3 6 1 0 5 4 8 9 7 2 
-This is the float: 51.566816
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 3 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-hello evolve
-goodbye evolve
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-0 5 9 7 6 3 8 1 4 2 
-This is the float: 54.339264
-0 8 9 2 6 7 5 3 4 1 
-This is the float: 46.761946
-9 2 0 7 4 3 1 5 8 6 
-This is the float: 46.209379
-6 0 4 9 3 7 1 5 2 8 
-This is the float: 66.129842
-0 8 9 3 5 7 4 2 1 6 
-This is the float: 57.901311
-7 6 9 5 1 4 3 8 2 0 
-This is the float: 49.726753
-3 6 1 2 7 4 8 5 0 9 
-This is the float: 55.449088
-5 1 0 8 6 2 9 7 3 4 
-This is the float: 57.082149
-5 7 9 3 6 8 4 2 1 0 
-This is the float: 58.270396
-The best is: 0 with a distance of 46.209379
-34 19
-91 35
-54 14
-55 76
-60 96
-54 1
-6 92
-38 8
-82 8
-1 90
-4 0 6 9 3 5 1 8 7 2 
-This is the float: 60.295015
-1 4 2 6 5 7 8 0 9 3 
-This is the float: 55.097703
-4 1 0 7 3 5 8 9 2 6 
-This is the float: 51.793460
-9 5 1 6 2 3 8 4 7 0 
-This is the float: 60.793134
-7 4 0 2 5 9 6 8 3 1 
-This is the float: 48.228885
-8 2 6 4 9 7 3 5 0 1 
-This is the float: 60.449436
-8 1 2 6 9 4 0 3 7 5 
-This is the float: 61.001205
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-5 6 9 2 4 0 1 3 8 7 
-This is the float: 57.345190
-5 6 1 0 4 9 8 7 3 2 
-This is the float: 63.394142
-The best is: 7 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-1 7 6 9 0 2 3 5 8 4 
-This is the float: 59.533693
-2 5 0 3 1 4 8 9 7 6 
-This is the float: 44.608164
-8 5 4 6 0 3 2 7 1 9 
-This is the float: 66.609715
-8 0 2 7 1 4 5 9 6 3 
-This is the float: 53.507849
-5 0 9 6 4 3 8 2 7 1 
-This is the float: 47.568380
-0 9 2 4 1 6 8 7 3 5 
-This is the float: 58.508824
-5 3 0 2 6 7 4 9 1 8 
-This is the float: 64.577296
-7 6 8 0 9 5 1 2 3 4 
-This is the float: 57.265883
-7 5 3 1 8 4 9 0 6 2 
-This is the float: 54.490006
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-1 5 8 7 9 3 0 4 6 2 
-This is the float: 66.081890
-5 7 6 8 1 0 9 3 4 2 
-This is the float: 54.453334
-8 5 4 9 6 7 1 2 0 3 
-This is the float: 63.149856
-5 0 2 3 8 7 6 4 9 1 
-This is the float: 55.066038
-2 8 3 6 5 1 9 0 7 4 
-This is the float: 57.036025
-1 3 9 4 5 2 6 7 8 0 
-This is the float: 55.682648
-0 8 7 9 4 5 6 2 1 3 
-This is the float: 59.422855
-5 1 7 9 0 6 2 4 8 3 
-This is the float: 66.336463
-3 5 8 4 9 0 2 6 7 1 
-This is the float: 62.490171
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-1 6 0 5 7 3 4 8 2 9 
-This is the float: 48.243750
-1 0 7 2 6 5 3 4 8 9 
-This is the float: 50.756671
-8 1 6 2 0 7 3 9 5 4 
-This is the float: 54.881438
-7 8 4 5 1 9 2 0 6 3 
-This is the float: 60.270975
-4 5 9 7 8 3 2 1 0 6 
-This is the float: 66.599688
-4 8 5 1 3 9 6 0 2 7 
-This is the float: 48.944246
-3 1 0 9 7 8 2 6 4 5 
-This is the float: 58.119229
-1 2 6 3 5 8 0 9 7 4 
-This is the float: 62.914908
-2 9 3 4 7 6 5 0 1 8 
-This is the float: 56.335234
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-0 7 4 9 5 3 6 8 2 1 
-This is the float: 56.793074
-8 5 3 7 4 9 1 6 0 2 
-This is the float: 64.192538
-2 8 5 6 4 3 1 7 9 0 
-This is the float: 53.832665
-5 7 1 3 0 4 2 8 9 6 
-This is the float: 50.877991
-5 7 8 6 9 1 3 4 2 0 
-This is the float: 41.513391
-7 0 6 8 3 5 2 4 9 1 
-This is the float: 54.268025
-0 2 8 3 7 4 9 1 6 5 
-This is the float: 60.501435
-4 6 5 7 0 8 3 2 9 1 
-This is the float: 50.954015
-4 3 5 8 9 2 0 1 7 6 
-This is the float: 54.002071
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-9 7 3 1 5 0 2 6 4 8 
-This is the float: 53.094200
-5 4 0 3 1 6 2 8 9 7 
-This is the float: 54.433944
-7 0 2 9 8 3 5 4 6 1 
-This is the float: 50.392640
-2 8 7 3 6 1 0 9 4 5 
-This is the float: 64.399826
-5 2 7 3 9 8 1 4 6 0 
-This is the float: 50.641269
-9 8 0 7 6 5 2 1 3 4 
-This is the float: 41.954447
-3 0 8 2 7 1 6 4 9 5 
-This is the float: 60.209160
-2 5 9 6 1 4 8 0 7 3 
-This is the float: 49.092127
-5 1 6 4 7 9 3 0 2 8 
-This is the float: 62.249433
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-2 8 7 4 5 1 6 9 0 3 
-This is the float: 63.221208
-9 8 5 2 3 1 7 4 6 0 
-This is the float: 54.451290
-7 9 8 0 1 2 3 5 6 4 
-This is the float: 60.779007
-2 9 8 3 1 5 6 4 0 7 
-This is the float: 49.829028
-6 1 2 0 5 7 9 4 8 3 
-This is the float: 50.492097
-1 8 7 4 6 2 9 3 5 0 
-This is the float: 57.466735
-2 4 1 5 8 0 9 6 7 3 
-This is the float: 60.523862
-8 9 7 6 3 2 0 5 4 1 
-This is the float: 49.415421
-4 9 7 0 1 8 5 2 6 3 
-This is the float: 52.703636
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-6 3 2 9 1 8 4 0 5 7 
-This is the float: 53.080871
-1 4 7 3 8 9 0 6 2 5 
-This is the float: 54.543378
-8 2 3 9 6 1 5 4 0 7 
-This is the float: 58.160147
-7 2 6 0 5 4 9 8 3 1 
-This is the float: 46.041384
-3 7 9 4 8 5 0 1 2 6 
-This is the float: 61.081340
-7 9 2 4 8 0 5 3 6 1 
-This is the float: 56.259745
-3 6 9 0 7 8 4 2 5 1 
-This is the float: 53.370300
-4 5 9 3 1 0 7 8 6 2 
-This is the float: 50.739156
-8 1 9 0 6 7 2 4 5 3 
-This is the float: 64.838721
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-2 1 0 9 3 8 5 7 6 4 
-This is the float: 58.794826
-4 1 5 0 7 8 2 3 9 6 
-This is the float: 46.194566
-6 1 0 8 9 5 4 3 2 7 
-This is the float: 54.595814
-4 1 2 0 5 7 9 8 3 6 
-This is the float: 41.236086
-7 6 1 3 9 8 4 2 0 5 
-This is the float: 44.855295
-4 2 6 8 5 7 0 1 3 9 
-This is the float: 46.352942
-6 9 4 8 5 3 2 7 1 0 
-This is the float: 63.581870
-2 6 1 5 9 8 7 4 0 3 
-This is the float: 62.296868
-3 5 2 0 4 1 7 8 9 6 
-This is the float: 51.045722
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-3 0 4 8 9 7 6 5 2 1 
-This is the float: 59.802760
-9 7 4 6 0 3 5 1 8 2 
-This is the float: 68.186394
-2 3 1 5 6 4 9 7 0 8 
-This is the float: 56.271659
-2 4 7 8 0 9 1 5 6 3 
-This is the float: 65.393577
-3 4 2 5 6 7 0 8 9 1 
-This is the float: 47.399517
-1 7 8 2 4 6 3 0 5 9 
-This is the float: 59.255079
-4 1 6 3 8 0 9 2 5 7 
-This is the float: 46.564974
-5 1 8 4 2 0 7 3 9 6 
-This is the float: 56.639605
-6 4 7 1 0 2 8 3 5 9 
-This is the float: 65.276458
-The best is: 0 with a distance of 37.254446
-hello evolve
-goodbye evolve
-3 1 6 2 7 5 0 8 9 4 
-This is the float: 37.254446
-0 7 4 9 6 8 3 1 2 5 
-This is the float: 46.530793
-1 9 6 2 5 7 4 8 3 0 
-This is the float: 54.491620
-6 8 9 7 1 2 3 4 5 0 
-This is the float: 51.498019
-9 2 5 4 6 0 3 1 8 7 
-This is the float: 56.476314
-2 4 5 1 0 9 8 3 6 7 
-This is the float: 62.924064
-6 0 9 5 3 7 4 8 2 1 
-This is the float: 67.728276
-0 2 5 1 9 4 7 8 6 3 
-This is the float: 55.577350
-6 3 5 7 1 8 4 9 2 0 
-This is the float: 57.261743
-5 9 8 2 3 0 4 6 7 1 
-This is the float: 62.379470
-The best is: 0 with a distance of 37.254446
-34 19
-91 35
-54 14
-55 76
-60 96
-54 1
-6 92
-38 8
-82 8
-1 90
-8 2 7 0 9 4 5 6 3 1 
-This is the float: 50.841199
-8 2 4 5 6 9 1 3 7 0 
-This is the float: 53.341756
-6 2 9 5 7 4 1 8 3 0 
-This is the float: 56.473256
-4 0 5 8 9 7 6 1 3 2 
-This is the float: 47.863316
-0 9 3 4 7 2 6 5 8 1 
-This is the float: 56.618217
-7 0 5 1 2 9 4 8 6 3 
-This is the float: 49.657005
-9 2 6 5 7 8 4 1 0 3 
-This is the float: 57.440774
-3 9 4 2 6 1 7 8 5 0 
-This is the float: 57.444188
-0 6 9 4 5 3 1 8 2 7 
-This is the float: 53.800786
-1 2 4 0 8 6 7 3 9 5 
-This is the float: 64.811888
-The best is: 3 with a distance of 47.863316
-hello evolve
-goodbye evolve
-4 0 5 8 9 7 6 1 3 2 
-This is the float: 47.863316
-2 8 4 0 1 7 5 9 6 3 
-This is the float: 57.841935
-8 4 6 1 2 7 3 9 0 5 
-This is the float: 56.460230
-5 3 2 4 9 1 7 8 6 0 
-This is the float: 65.128373
-6 3 5 9 8 0 2 1 7 4 
-This is the float: 58.466240
-7 5 6 0 8 9 2 3 1 4 
-This is the float: 43.794784
-7 5 3 6 9 4 0 1 8 2 
-This is the float: 57.553681
-8 4 3 1 2 0 9 5 7 6 
-This is the float: 49.224379
-6 9 0 2 7 5 1 8 3 4 
-This is the float: 46.202838
-1 4 0 7 5 3 8 6 9 2 
-This is the float: 46.662801
-The best is: 5 with a distance of 43.794784
-hello evolve
-goodbye evolve
-7 5 6 0 8 9 2 3 1 4 
-This is the float: 43.794784
-2 6 3 4 1 9 8 0 5 7 
-This is the float: 39.112070
-4 1 0 8 3 2 6 5 9 7 
-This is the float: 59.187238
-0 7 9 2 4 6 5 3 1 8 
-This is the float: 54.657696
-6 3 2 7 9 1 0 4 8 5 
-This is the float: 63.729530
-6 3 9 5 0 8 1 7 2 4 
-This is the float: 54.581613
-5 3 9 6 7 4 2 0 1 8 
-This is the float: 63.185114
-4 7 2 5 0 1 6 8 3 9 
-This is the float: 49.589882
-1 5 9 8 2 4 3 6 7 0 
-This is the float: 50.098814
-1 5 2 6 0 9 7 8 4 3 
-This is the float: 56.847036
-The best is: 1 with a distance of 39.112070
-hello evolve
-goodbye evolve
-2 6 3 4 1 9 8 0 5 7 
-This is the float: 39.112070
-4 7 2 1 5 8 0 3 6 9 
-This is the float: 60.441344
-5 4 0 9 8 1 2 7 3 6 
-This is the float: 60.633477
-2 5 4 9 0 6 7 3 1 8 
-This is the float: 59.257018
-0 9 4 2 8 3 1 5 7 6 
-This is the float: 55.574364
-0 5 2 7 8 6 9 1 4 3 
-This is the float: 38.210914
-1 0 8 7 4 3 5 9 2 6 
-This is the float: 61.738959
-6 9 5 2 8 1 3 0 4 7 
-This is the float: 54.646527
-3 0 2 9 5 6 1 4 8 7 
-This is the float: 55.584030
-6 0 3 9 8 5 1 2 7 4 
-This is the float: 60.001027
-The best is: 5 with a distance of 38.210914
-hello evolve
-goodbye evolve
-0 5 2 7 8 6 9 1 4 3 
-This is the float: 38.210914
-0 5 8 7 6 3 4 1 2 9 
-This is the float: 49.808038
-8 0 9 4 5 7 1 3 6 2 
-This is the float: 55.761438
-3 6 1 2 7 9 4 5 0 8 
-This is the float: 55.659568
-2 8 9 0 4 5 6 7 1 3 
-This is the float: 57.002478
-8 5 3 4 2 1 9 7 6 0 
-This is the float: 63.174072
-4 0 3 9 1 6 5 7 8 2 
-This is the float: 57.393894
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-8 7 2 5 1 0 6 4 9 3 
-This is the float: 60.610160
-3 2 5 8 9 6 1 7 0 4 
-This is the float: 48.135054
-The best is: 7 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-5 7 8 3 2 4 6 1 0 9 
-This is the float: 60.970153
-7 3 5 0 8 1 2 6 4 9 
-This is the float: 60.205348
-5 2 0 8 3 7 9 6 4 1 
-This is the float: 51.630920
-2 0 8 1 4 3 5 9 7 6 
-This is the float: 55.070076
-9 2 8 1 6 5 7 3 0 4 
-This is the float: 58.535385
-0 6 5 8 1 4 9 3 7 2 
-This is the float: 58.955721
-0 8 1 2 3 4 7 9 6 5 
-This is the float: 59.035272
-4 8 2 5 0 7 3 9 1 6 
-This is the float: 47.231652
-6 1 7 4 9 5 3 0 8 2 
-This is the float: 67.108858
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-0 6 3 2 5 8 9 7 4 1 
-This is the float: 53.585170
-2 1 7 4 5 8 9 3 6 0 
-This is the float: 62.791411
-7 8 6 3 9 5 2 0 4 1 
-This is the float: 50.635446
-8 6 0 2 9 1 3 7 5 4 
-This is the float: 48.627014
-3 1 7 5 6 9 8 2 4 0 
-This is the float: 48.603669
-5 1 2 0 7 3 8 9 6 4 
-This is the float: 49.444851
-2 7 0 6 3 8 9 4 1 5 
-This is the float: 49.157691
-9 6 3 4 7 0 2 1 5 8 
-This is the float: 52.355140
-2 8 1 3 7 0 6 4 5 9 
-This is the float: 55.165632
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-4 5 8 2 7 6 0 9 3 1 
-This is the float: 53.991131
-2 7 1 6 9 5 0 4 8 3 
-This is the float: 53.662209
-9 8 3 2 7 4 1 0 6 5 
-This is the float: 57.805754
-6 9 8 0 5 3 4 2 7 1 
-This is the float: 47.876044
-0 4 7 3 9 1 8 6 5 2 
-This is the float: 61.088577
-1 6 0 8 2 7 3 9 4 5 
-This is the float: 61.119534
-7 5 9 8 4 1 2 3 6 0 
-This is the float: 51.607058
-7 9 2 0 4 6 3 8 1 5 
-This is the float: 59.715520
-8 5 9 7 3 4 1 6 0 2 
-This is the float: 54.193744
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-5 1 4 8 2 6 3 7 0 9 
-This is the float: 55.969328
-7 5 2 0 9 3 4 1 8 6 
-This is the float: 42.273157
-0 3 4 2 5 8 1 7 9 6 
-This is the float: 57.032451
-7 9 8 2 6 0 1 3 5 4 
-This is the float: 54.131794
-8 5 3 9 7 1 0 2 6 4 
-This is the float: 62.120895
-9 4 0 7 6 5 3 2 1 8 
-This is the float: 64.896267
-1 4 2 3 0 6 8 7 5 9 
-This is the float: 56.796953
-1 9 2 4 0 8 5 7 3 6 
-This is the float: 60.204584
-5 8 9 0 1 7 3 6 4 2 
-This is the float: 62.529481
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-5 1 9 3 7 0 2 8 6 4 
-This is the float: 51.539680
-1 4 7 3 8 6 0 2 5 9 
-This is the float: 54.603148
-7 3 5 9 8 4 1 2 0 6 
-This is the float: 56.735567
-7 1 8 9 3 6 2 4 5 0 
-This is the float: 54.335536
-0 1 5 6 4 3 2 8 9 7 
-This is the float: 56.479239
-1 5 0 6 9 4 7 2 8 3 
-This is the float: 53.528621
-7 5 4 9 2 6 3 0 8 1 
-This is the float: 58.044277
-8 0 7 5 3 1 4 6 2 9 
-This is the float: 46.048435
-8 1 9 5 6 4 0 3 7 2 
-This is the float: 64.979904
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-8 9 0 3 2 4 6 7 5 1 
-This is the float: 59.567286
-0 7 3 2 4 9 1 5 6 8 
-This is the float: 60.973734
-7 8 9 6 1 2 0 5 4 3 
-This is the float: 43.523349
-5 8 7 2 1 9 4 3 6 0 
-This is the float: 56.286622
-0 2 5 9 6 1 8 4 7 3 
-This is the float: 55.247460
-3 8 4 0 7 6 5 2 9 1 
-This is the float: 55.407809
-0 4 9 8 6 3 1 5 7 2 
-This is the float: 46.136773
-9 8 1 2 5 7 0 4 6 3 
-This is the float: 47.376303
-3 5 7 4 8 6 9 0 2 1 
-This is the float: 53.457274
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-8 4 2 1 0 7 9 3 5 6 
-This is the float: 64.618394
-3 9 1 4 8 5 0 6 7 2 
-This is the float: 51.781915
-3 8 2 9 0 7 1 5 4 6 
-This is the float: 59.735607
-6 0 2 4 3 8 1 5 9 7 
-This is the float: 58.499497
-6 0 9 4 5 8 1 2 7 3 
-This is the float: 64.426564
-1 0 8 9 7 3 5 6 2 4 
-This is the float: 61.687808
-1 3 8 4 7 9 0 2 6 5 
-This is the float: 56.031584
-9 3 5 2 1 4 0 8 6 7 
-This is the float: 58.012087
-1 7 6 0 8 4 5 2 3 9 
-This is the float: 64.987615
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-8 5 2 9 0 4 3 1 6 7 
-This is the float: 50.369441
-8 6 9 5 4 7 1 2 3 0 
-This is the float: 65.341202
-5 8 4 3 1 2 0 7 6 9 
-This is the float: 45.267548
-3 9 4 1 2 6 5 0 8 7 
-This is the float: 53.644702
-8 3 4 5 2 9 1 0 6 7 
-This is the float: 58.233773
-6 2 9 1 8 5 3 4 0 7 
-This is the float: 54.617657
-9 0 1 6 5 7 3 4 2 8 
-This is the float: 57.848151
-2 6 3 7 5 9 4 1 0 8 
-This is the float: 57.607582
-9 5 2 4 3 1 0 6 7 8 
-This is the float: 55.319011
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-9 2 7 6 8 5 3 1 0 4 
-This is the float: 55.088618
-6 4 9 3 1 8 2 7 5 0 
-This is the float: 44.033699
-0 5 2 8 6 9 1 3 4 7 
-This is the float: 38.824595
-1 6 0 5 4 9 2 3 7 8 
-This is the float: 60.111933
-7 0 3 4 8 9 5 6 2 1 
-This is the float: 51.251988
-3 1 7 0 6 4 9 2 5 8 
-This is the float: 50.529789
-0 6 7 1 8 2 5 3 9 4 
-This is the float: 60.264156
-4 7 9 2 3 1 8 0 5 6 
-This is the float: 52.219860
-6 3 4 9 1 7 8 0 2 5 
-This is the float: 53.861719
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-0 5 3 6 8 2 9 7 4 1 
-This is the float: 50.864766
-4 5 8 3 2 7 0 1 9 6 
-This is the float: 54.748335
-6 2 8 3 1 0 5 4 9 7 
-This is the float: 53.585388
-2 9 8 4 0 6 5 3 7 1 
-This is the float: 64.216018
-2 4 9 7 0 3 6 8 1 5 
-This is the float: 58.627945
-3 9 0 2 4 6 7 1 5 8 
-This is the float: 63.856161
-9 5 6 8 2 3 7 4 1 0 
-This is the float: 61.742398
-9 0 7 3 5 4 2 1 8 6 
-This is the float: 62.622415
-0 3 1 9 8 2 6 4 7 5 
-This is the float: 49.255412
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-4 6 9 8 7 5 1 2 0 3 
-This is the float: 49.641441
-5 0 3 1 4 2 6 8 7 9 
-This is the float: 48.987206
-3 9 8 2 7 6 0 4 1 5 
-This is the float: 54.676960
-0 3 9 6 8 2 7 4 1 5 
-This is the float: 54.402790
-2 1 7 9 4 5 6 0 3 8 
-This is the float: 69.880910
-3 4 2 0 7 6 5 9 1 8 
-This is the float: 52.584187
-4 7 3 1 2 8 5 0 9 6 
-This is the float: 50.390348
-6 8 0 2 3 4 1 7 5 9 
-This is the float: 49.142924
-9 1 6 4 7 3 0 2 5 8 
-This is the float: 60.757364
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-9 4 8 5 6 0 1 7 3 2 
-This is the float: 70.013092
-6 9 5 7 1 4 2 0 8 3 
-This is the float: 51.806950
-9 8 2 4 5 0 1 7 3 6 
-This is the float: 58.987719
-6 5 8 1 9 0 2 3 7 4 
-This is the float: 62.071882
-0 3 1 7 8 9 6 4 5 2 
-This is the float: 51.562302
-2 5 1 8 6 3 4 9 0 7 
-This is the float: 48.477114
-7 2 0 3 4 1 5 6 9 8 
-This is the float: 46.501725
-6 7 3 4 1 5 9 8 2 0 
-This is the float: 50.897421
-2 9 3 7 6 1 4 5 0 8 
-This is the float: 55.866614
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-6 1 4 8 7 0 2 3 9 5 
-This is the float: 52.306560
-4 5 7 3 8 2 6 1 0 9 
-This is the float: 58.840106
-7 3 1 4 0 6 9 2 5 8 
-This is the float: 50.753147
-4 2 6 7 9 5 0 1 8 3 
-This is the float: 57.138705
-4 1 3 6 2 0 7 9 8 5 
-This is the float: 39.078100
-2 0 3 9 7 8 5 4 1 6 
-This is the float: 59.105437
-7 5 0 6 2 4 3 1 9 8 
-This is the float: 40.132622
-2 4 6 0 8 5 1 9 7 3 
-This is the float: 65.973629
-6 4 9 2 5 3 8 0 7 1 
-This is the float: 56.873122
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-3 5 4 2 1 7 6 8 9 0 
-This is the float: 61.912494
-9 8 3 4 1 7 6 2 5 0 
-This is the float: 44.532715
-6 4 5 1 3 8 2 0 7 9 
-This is the float: 52.648345
-5 4 6 8 0 1 2 3 7 9 
-This is the float: 66.601618
-6 0 9 1 5 4 2 3 8 7 
-This is the float: 67.619182
-5 7 6 2 0 3 8 4 9 1 
-This is the float: 56.898573
-6 8 3 1 2 7 9 0 5 4 
-This is the float: 48.110515
-3 1 2 0 5 4 9 6 8 7 
-This is the float: 45.358599
-3 6 1 4 7 8 5 2 9 0 
-This is the float: 54.116505
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-4 8 2 5 0 3 7 1 6 9 
-This is the float: 52.767050
-0 2 7 1 6 4 5 3 8 9 
-This is the float: 56.585744
-7 1 3 5 0 4 9 6 2 8 
-This is the float: 52.336893
-3 9 6 2 1 0 5 8 4 7 
-This is the float: 56.549729
-5 3 8 2 7 0 4 1 6 9 
-This is the float: 50.710876
-5 8 6 4 1 3 2 9 0 7 
-This is the float: 45.616824
-4 2 5 7 9 8 6 1 0 3 
-This is the float: 49.190281
-7 2 1 5 0 3 6 4 9 8 
-This is the float: 53.400907
-5 0 9 3 6 4 2 1 7 8 
-This is the float: 59.837645
-The best is: 0 with a distance of 37.963821
-hello evolve
-goodbye evolve
-9 6 1 3 4 8 5 0 7 2 
-This is the float: 37.963821
-6 0 8 9 7 2 5 4 3 1 
-This is the float: 46.081081
-0 3 4 1 2 7 5 6 9 8 
-This is the float: 44.818365
-9 1 0 4 7 8 5 6 3 2 
-This is the float: 67.885648
-1 7 6 4 3 9 5 8 0 2 
-This is the float: 56.967529
-4 5 2 6 0 1 3 9 7 8 
-This is the float: 56.286937
-9 5 3 6 1 7 8 0 4 2 
-This is the float: 66.943870
-2 3 8 9 7 5 0 6 4 1 
-This is the float: 46.263998
-5 1 9 4 2 6 0 7 8 3 
-This is the float: 59.652873
-2 7 3 6 8 1 9 0 5 4 
-This is the float: 52.027533
-The best is: 0 with a distance of 37.963821
+7 4 9 8 3 6 2 5 1 0 
+Total length for 0: 57.750963
+2 4 9 0 8 3 1 7 5 6 
+Total length for 1: 56.831168
+3 7 6 5 4 8 0 9 1 2 
+Total length for 2: 66.941029
+0 4 8 5 3 9 7 6 2 1 
+Total length for 3: 66.243668
+1 7 2 3 8 5 4 0 9 6 
+Total length for 4: 62.900078
+5 7 3 1 2 8 9 6 4 0 
+Total length for 5: 48.172217
+2 6 9 8 3 0 7 5 4 1 
+Total length for 6: 45.530714
+2 9 5 8 1 3 0 4 7 6 
+Total length for 7: 61.627823
+1 3 9 7 8 6 2 5 4 0 
+Total length for 8: 54.012048
+0 9 8 4 1 6 5 2 7 3 
+Total length for 9: 50.130131
+The best is: 6 with a distance of 45.530714
+2 6 9 8 3 0 7 5 4 1 
+Total length for 0: 45.530714
+1 6 3 8 4 2 0 9 7 5 
+Total length for 1: 54.689661
+2 7 9 8 5 6 4 1 3 0 
+Total length for 2: 49.032966
+5 4 1 0 6 2 8 7 3 9 
+Total length for 3: 63.124300
+5 6 3 1 4 9 0 2 8 7 
+Total length for 4: 49.438615
+2 3 4 0 6 9 5 1 8 7 
+Total length for 5: 59.499500
+9 8 0 1 2 7 6 3 4 5 
+Total length for 6: 55.938496
+4 9 2 0 1 7 8 3 5 6 
+Total length for 7: 62.530959
+1 7 5 3 8 6 2 0 9 4 
+Total length for 8: 53.470502
+5 7 8 3 1 0 9 2 4 6 
+Total length for 9: 54.773296
+The best is: 0 with a distance of 45.530714
+2 6 9 8 3 0 7 5 4 1 
+Total length for 0: 45.530714
+6 3 9 7 1 8 0 4 2 5 
+Total length for 1: 62.939631
+8 0 6 1 4 7 2 5 3 9 
+Total length for 2: 57.386103
+6 3 0 9 4 5 2 8 1 7 
+Total length for 3: 62.093110
+3 0 6 5 7 9 4 8 2 1 
+Total length for 4: 60.298092
+9 2 0 7 3 8 6 1 4 5 
+Total length for 5: 50.584266
+6 9 5 3 7 2 0 1 8 4 
+Total length for 6: 57.814535
+7 4 5 1 3 2 6 0 9 8 
+Total length for 7: 58.487279
+6 2 3 8 5 4 0 7 9 1 
+Total length for 8: 61.202486
+1 7 4 3 9 6 0 5 8 2 
+Total length for 9: 52.131580
+The best is: 0 with a distance of 45.530714
+2 6 9 8 3 0 7 5 4 1 
+Total length for 0: 45.530714
+2 0 7 6 5 1 3 8 4 9 
+Total length for 1: 53.538914
+3 7 6 9 5 8 1 0 4 2 
+Total length for 2: 65.066205
+3 0 8 4 6 7 1 2 9 5 
+Total length for 3: 65.221314
+5 4 1 3 8 0 9 7 2 6 
+Total length for 4: 53.289315
+6 3 9 7 0 5 8 2 1 4 
+Total length for 5: 46.536781
+5 3 1 9 6 2 4 0 8 7 
+Total length for 6: 57.238658
+8 2 7 1 3 0 9 5 6 4 
+Total length for 7: 55.730558
+0 5 9 8 2 3 1 4 6 7 
+Total length for 8: 43.582052
+8 1 4 7 3 6 5 0 9 2 
+Total length for 9: 55.861319
+The best is: 8 with a distance of 43.582052
+0 5 9 8 2 3 1 4 6 7 
+Total length for 0: 43.582052
+2 0 8 7 6 4 3 1 9 5 
+Total length for 1: 50.568019
+9 3 7 4 1 8 5 6 2 0 
+Total length for 2: 59.333141
+1 2 5 7 0 4 9 6 8 3 
+Total length for 3: 46.955528
+8 4 9 0 3 2 7 1 6 5 
+Total length for 4: 64.603354
+1 9 0 3 4 8 6 5 2 7 
+Total length for 5: 51.718126
+1 7 6 8 5 3 4 0 9 2 
+Total length for 6: 59.726816
+7 6 8 3 4 2 0 1 9 5 
+Total length for 7: 55.156552
+6 8 3 0 4 2 1 7 5 9 
+Total length for 8: 63.153080
+4 3 8 5 6 9 1 2 0 7 
+Total length for 9: 46.572981
+The best is: 0 with a distance of 43.582052
+0 5 9 8 2 3 1 4 6 7 
+Total length for 0: 43.582052
+2 8 0 1 5 4 7 9 3 6 
+Total length for 1: 67.058618
+2 5 9 3 8 4 7 0 1 6 
+Total length for 2: 57.426615
+8 6 7 0 5 2 4 9 3 1 
+Total length for 3: 43.708758
+5 6 0 9 2 3 7 8 4 1 
+Total length for 4: 61.617200
+5 6 0 7 1 9 8 4 3 2 
+Total length for 5: 52.833038
+3 9 5 8 6 1 4 2 0 7 
+Total length for 6: 47.737357
+9 0 2 4 8 1 6 3 7 5 
+Total length for 7: 56.797877
+5 4 8 9 1 7 0 3 6 2 
+Total length for 8: 56.733566
+1 8 7 0 5 4 3 9 6 2 
+Total length for 9: 46.190622
+The best is: 0 with a distance of 43.582052
+0 5 9 8 2 3 1 4 6 7 
+Total length for 0: 43.582052
+7 6 0 1 8 2 4 3 5 9 
+Total length for 1: 62.252355
+4 1 2 5 8 0 3 6 7 9 
+Total length for 2: 57.193022
+5 9 0 2 8 6 4 7 1 3 
+Total length for 3: 52.840442
+2 7 0 1 6 8 3 9 5 4 
+Total length for 4: 52.777656
+3 2 8 1 9 5 6 7 4 0 
+Total length for 5: 64.949271
+4 0 5 9 1 2 7 8 6 3 
+Total length for 6: 50.991613
+3 7 4 1 2 9 5 0 8 6 
+Total length for 7: 53.921866
+3 0 5 7 8 9 2 6 1 4 
+Total length for 8: 41.921009
+7 0 6 9 8 1 3 4 2 5 
+Total length for 9: 39.222157
+The best is: 9 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+1 9 8 4 6 2 5 0 7 3 
+Total length for 1: 45.018177
+4 2 6 3 9 1 7 8 5 0 
+Total length for 2: 55.751070
+8 1 0 5 6 3 7 2 4 9 
+Total length for 3: 59.613268
+5 3 0 4 1 8 9 7 2 6 
+Total length for 4: 57.051521
+7 5 3 6 4 2 9 0 8 1 
+Total length for 5: 57.501973
+7 9 6 2 0 4 8 1 5 3 
+Total length for 6: 60.121042
+4 7 9 8 1 2 3 5 6 0 
+Total length for 7: 61.732760
+8 1 4 0 7 9 2 3 6 5 
+Total length for 8: 56.015159
+5 3 7 0 6 9 1 2 8 4 
+Total length for 9: 56.283356
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+6 3 4 8 7 5 0 9 2 1 
+Total length for 1: 48.492083
+7 3 9 2 0 5 1 8 4 6 
+Total length for 2: 55.793089
+7 0 5 4 2 9 8 3 6 1 
+Total length for 3: 46.725693
+0 1 2 7 5 6 4 9 3 8 
+Total length for 4: 58.813342
+6 7 1 8 9 0 3 4 5 2 
+Total length for 5: 56.806976
+2 6 5 3 7 4 1 9 8 0 
+Total length for 6: 58.936163
+0 9 8 1 6 7 4 2 5 3 
+Total length for 7: 57.859288
+5 2 9 0 1 7 8 3 6 4 
+Total length for 8: 58.450782
+3 7 4 8 5 6 0 1 2 9 
+Total length for 9: 67.969002
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+0 1 3 8 2 7 4 9 5 6 
+Total length for 1: 57.671812
+7 6 3 8 4 0 2 1 5 9 
+Total length for 2: 63.546626
+3 8 2 1 6 7 0 9 5 4 
+Total length for 3: 56.071959
+5 6 0 7 8 2 1 9 3 4 
+Total length for 4: 52.091467
+1 4 7 3 5 9 0 6 8 2 
+Total length for 5: 60.294117
+2 0 1 8 9 6 7 4 5 3 
+Total length for 6: 58.529603
+1 3 5 4 2 7 8 6 9 0 
+Total length for 7: 53.346831
+6 7 9 2 0 3 4 1 8 5 
+Total length for 8: 53.813188
+8 6 5 0 3 4 9 2 7 1 
+Total length for 9: 51.124617
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+5 9 0 1 2 4 3 8 7 6 
+Total length for 1: 62.952499
+0 4 6 3 9 5 2 8 1 7 
+Total length for 2: 59.074022
+8 7 9 0 5 4 3 6 1 2 
+Total length for 3: 54.621795
+6 0 8 2 4 1 3 9 5 7 
+Total length for 4: 49.900063
+3 0 5 1 9 4 8 7 2 6 
+Total length for 5: 57.575391
+3 2 1 8 9 6 7 4 5 0 
+Total length for 6: 54.362059
+4 7 1 0 8 3 9 2 5 6 
+Total length for 7: 61.745628
+1 9 0 8 6 2 3 5 4 7 
+Total length for 8: 63.661925
+4 9 3 0 2 7 6 5 1 8 
+Total length for 9: 59.976664
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+2 6 5 7 8 3 1 9 4 0 
+Total length for 1: 54.434335
+4 8 6 3 5 2 1 7 9 0 
+Total length for 2: 58.453040
+2 6 4 3 1 7 0 9 5 8 
+Total length for 3: 49.999584
+8 3 6 9 2 1 0 7 5 4 
+Total length for 4: 51.444674
+2 0 4 3 9 6 7 5 8 1 
+Total length for 5: 50.119364
+6 2 5 9 7 3 0 4 1 8 
+Total length for 6: 61.468403
+3 0 7 1 2 5 9 4 6 8 
+Total length for 7: 56.149566
+2 1 8 0 9 7 3 4 5 6 
+Total length for 8: 63.398012
+6 0 9 1 8 7 5 3 2 4 
+Total length for 9: 60.457831
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+2 6 4 0 9 3 7 8 5 1 
+Total length for 1: 65.925883
+8 9 4 5 3 0 1 6 7 2 
+Total length for 2: 62.398717
+4 2 1 5 0 3 9 8 7 6 
+Total length for 3: 56.837636
+4 2 8 1 9 0 6 5 7 3 
+Total length for 4: 57.636928
+5 9 4 2 0 3 8 6 7 1 
+Total length for 5: 61.534759
+2 8 4 7 9 1 6 0 5 3 
+Total length for 6: 58.058544
+4 7 8 9 6 2 1 5 0 3 
+Total length for 7: 52.532212
+9 1 2 5 8 6 7 4 0 3 
+Total length for 8: 62.561755
+6 3 0 1 2 4 8 7 9 5 
+Total length for 9: 67.582424
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+9 2 0 7 5 6 4 8 3 1 
+Total length for 1: 45.251008
+9 1 0 8 2 6 5 4 7 3 
+Total length for 2: 67.025434
+8 4 0 2 7 1 3 9 5 6 
+Total length for 3: 56.898663
+8 6 1 5 9 2 0 7 4 3 
+Total length for 4: 49.348734
+4 8 5 3 2 0 6 1 9 7 
+Total length for 5: 59.192144
+7 2 8 4 3 0 6 9 1 5 
+Total length for 6: 55.032816
+0 2 6 7 4 5 9 8 3 1 
+Total length for 7: 52.738468
+3 8 6 4 0 9 1 7 2 5 
+Total length for 8: 56.316949
+2 0 7 3 5 6 9 8 4 1 
+Total length for 9: 48.260531
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+5 4 9 7 1 3 8 6 2 0 
+Total length for 1: 54.582437
+2 3 7 1 4 6 0 8 5 9 
+Total length for 2: 63.901115
+3 9 7 4 8 2 6 5 0 1 
+Total length for 3: 58.328183
+0 5 7 4 1 2 8 6 9 3 
+Total length for 4: 44.484450
+2 7 3 4 9 1 6 8 0 5 
+Total length for 5: 48.505204
+6 0 8 3 4 2 5 7 1 9 
+Total length for 6: 55.040825
+6 8 5 2 0 1 7 9 4 3 
+Total length for 7: 53.481779
+1 4 2 9 3 0 7 8 6 5 
+Total length for 8: 53.475071
+1 0 7 4 6 9 8 2 5 3 
+Total length for 9: 49.953133
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+7 4 3 6 0 8 1 5 2 9 
+Total length for 1: 56.851150
+4 0 9 5 2 7 6 8 3 1 
+Total length for 2: 49.287994
+3 5 4 1 8 0 9 2 7 6 
+Total length for 3: 59.189425
+3 7 6 4 1 8 9 0 5 2 
+Total length for 4: 47.707825
+6 5 3 7 0 2 8 4 9 1 
+Total length for 5: 57.806307
+0 3 8 7 5 9 1 2 6 4 
+Total length for 6: 57.492986
+2 8 3 5 4 7 0 9 1 6 
+Total length for 7: 60.367050
+7 8 2 3 0 9 6 5 1 4 
+Total length for 8: 57.363659
+9 8 1 5 4 7 6 3 2 0 
+Total length for 9: 60.730016
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+4 5 6 3 1 7 0 9 2 8 
+Total length for 1: 51.828629
+7 8 9 5 6 3 2 0 4 1 
+Total length for 2: 53.371605
+3 9 1 7 4 5 0 8 2 6 
+Total length for 3: 59.387489
+7 5 9 3 8 6 2 1 4 0 
+Total length for 4: 53.275223
+5 0 9 8 4 6 2 3 1 7 
+Total length for 5: 48.913258
+9 3 0 8 1 7 6 2 4 5 
+Total length for 6: 68.302386
+3 5 2 0 8 4 6 1 9 7 
+Total length for 7: 55.934693
+4 8 1 9 5 2 7 6 0 3 
+Total length for 8: 57.087153
+6 4 5 0 1 8 9 7 3 2 
+Total length for 9: 58.488868
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+5 7 6 0 4 2 3 1 9 8 
+Total length for 1: 53.538431
+5 7 9 3 1 6 2 8 0 4 
+Total length for 2: 49.959625
+7 8 2 4 3 1 0 5 9 6 
+Total length for 3: 46.544533
+6 7 0 2 4 3 1 5 8 9 
+Total length for 4: 45.688966
+1 0 4 8 6 5 7 2 9 3 
+Total length for 5: 55.013602
+3 7 0 9 2 4 5 1 6 8 
+Total length for 6: 58.802328
+8 7 1 5 0 9 6 4 2 3 
+Total length for 7: 59.161909
+8 3 5 7 1 6 0 4 9 2 
+Total length for 8: 62.071881
+2 5 9 3 4 7 1 6 0 8 
+Total length for 9: 58.444936
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+9 3 6 5 0 4 8 7 2 1 
+Total length for 1: 57.253138
+9 7 4 3 5 2 6 8 1 0 
+Total length for 2: 57.369298
+9 2 0 6 8 5 3 7 1 4 
+Total length for 3: 56.480366
+6 0 5 8 3 1 7 4 9 2 
+Total length for 4: 54.968139
+0 2 5 1 6 4 9 7 3 8 
+Total length for 5: 59.205090
+9 3 0 5 1 7 2 8 4 6 
+Total length for 6: 59.061594
+7 1 3 9 5 4 6 8 2 0 
+Total length for 7: 52.562370
+1 4 3 6 0 9 2 5 8 7 
+Total length for 8: 50.045118
+2 5 8 3 4 1 9 0 7 6 
+Total length for 9: 48.339329
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+7 6 2 8 5 4 0 9 1 3 
+Total length for 1: 57.810153
+9 8 7 3 1 0 4 5 2 6 
+Total length for 2: 56.914410
+1 6 7 2 9 4 0 5 3 8 
+Total length for 3: 56.735137
+8 4 0 5 3 6 7 9 1 2 
+Total length for 4: 61.600663
+0 4 1 6 5 2 8 9 7 3 
+Total length for 5: 52.698774
+9 8 6 7 3 1 4 0 2 5 
+Total length for 6: 45.599794
+3 4 8 7 6 0 5 1 9 2 
+Total length for 7: 54.228869
+3 9 5 4 8 0 6 1 2 7 
+Total length for 8: 60.887127
+5 6 7 9 3 0 1 2 8 4 
+Total length for 9: 64.607292
+The best is: 0 with a distance of 39.222157
+7 0 6 9 8 1 3 4 2 5 
+Total length for 0: 39.222157
+1 6 9 0 2 5 4 8 3 7 
+Total length for 1: 55.376785
+7 1 9 6 4 3 0 5 8 2 
+Total length for 2: 50.974346
+8 7 9 2 1 6 3 0 4 5 
+Total length for 3: 65.819651
+8 5 4 0 2 6 1 3 9 7 
+Total length for 4: 56.025386
+5 7 9 2 6 3 8 1 0 4 
+Total length for 5: 56.821843
+2 5 9 6 0 1 8 3 7 4 
+Total length for 6: 59.614267
+8 1 0 2 6 3 4 7 9 5 
+Total length for 7: 57.835068
+7 4 5 1 3 8 0 9 6 2 
+Total length for 8: 57.973460
+4 7 0 6 5 8 1 3 9 2 
+Total length for 9: 51.672017
+The best is: 0 with a distance of 39.222157

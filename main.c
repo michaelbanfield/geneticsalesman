@@ -46,6 +46,7 @@ int main(int argc, char** argv) {
     printf("The best is: %d with a distance of %f\n", fittest, population.tours[fittest].distance);
     Tour eliteTour = population.tours[fittest];
     for (generation = 0; generation < maxGeneration; generation++) {
+        srand (generation * 20);
         evolvePopulation(ptrPopulation, 10, 10, eliteTour, cities, generation);
         fittest = getFittest(cities, ptrPopulation, 10);
         eliteTour = population.tours[fittest];
