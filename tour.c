@@ -68,6 +68,9 @@ double getDistance(City* cities, Tour* tour, int max) {
 void createPath(Tour* tour, int max) {
     int count = 0;
     
+    init_array_tour(tour, 10);
+    
+    
     
     //tour = malloc(sizeof (Tour) + max * sizeof (int));
     //tour->path[0] = 22;

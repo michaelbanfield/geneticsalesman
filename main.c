@@ -11,10 +11,11 @@
 #include "city.h"
 #include "tour.h"
 #include "population.h"
+#include "array_helpers.h"
 
 //global variables
 
-City cities[10];
+City* cities;
 Population population;
 Population * ptrPopulation = &population;
 
@@ -25,15 +26,21 @@ int main(int argc, char** argv) {
     
     srand ( time(NULL) );
     
+    
+    
 
     int x = 0, y = 0, i = 0;
 
-    if (argc > 1) {
+    if (argc > 3) {
         mapFile = fopen(argv[1], "r");
         if (mapFile == NULL) {
             return 2;
         }
         maxGeneration = atoi(argv[2]);
+        cities = malloc(sizeof(City) * atoi(argv[3]));
+    } else {
+        fprintf(stderr, "Wrong number of arguments\n");
+        return 3;
     }
 
     while (fscanf(mapFile, "%d %d\n", &cities[i].x, &cities[i].y) == 2) {

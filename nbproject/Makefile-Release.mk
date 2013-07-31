@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/array_helpers.o \
 	${OBJECTDIR}/city.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/population.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=-lm
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/geneticsalesman: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/geneticsalesman ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/array_helpers.o: array_helpers.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/array_helpers.o array_helpers.c
 
 ${OBJECTDIR}/city.o: city.c 
 	${MKDIR} -p ${OBJECTDIR}

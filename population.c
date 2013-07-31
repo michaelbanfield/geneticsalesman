@@ -22,6 +22,7 @@ void initPopulation(Population* population, int size, int max) {
     int count = 0;
     Tour * ptrTour;
     //population = malloc(sizeof (Population) + size * sizeof (Tour));
+    init_array_population(population, max);
     
     
     for (count = 0; count < size; count++) {

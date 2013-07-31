@@ -17,7 +17,7 @@ extern "C" {
     typedef struct {
         
         double distance;
-        int path[10];
+        int* path;
     }Tour;
     void printArray (int[], int);
     void shuffle(int *, size_t);

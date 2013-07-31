@@ -12,6 +12,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>array_helpers.c</itemPath>
+      <itemPath>array_helpers.h</itemPath>
       <itemPath>city.c</itemPath>
       <itemPath>city.h</itemPath>
       <itemPath>main.c</itemPath>
@@ -49,6 +51,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="array_helpers.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="array_helpers.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="city.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="city.h" ex="false" tool="3" flavor2="0">
@@ -90,6 +96,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="array_helpers.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="array_helpers.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="city.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="city.h" ex="false" tool="3" flavor2="0">

@@ -15,7 +15,7 @@ extern "C" {
 #include "tour.h"
     
     typedef struct{
-        Tour tours[10];
+        Tour* tours;
         int fittest;
     }Population;
     
