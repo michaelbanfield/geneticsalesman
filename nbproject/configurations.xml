@@ -15,6 +15,8 @@
       <itemPath>city.c</itemPath>
       <itemPath>city.h</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>population.c</itemPath>
+      <itemPath>population.h</itemPath>
       <itemPath>tour.c</itemPath>
       <itemPath>tour.h</itemPath>
     </logicalFolder>
@@ -41,6 +43,7 @@
       </toolsSet>
       <compileType>
         <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/geneticsalesman</output>
           <linkerLibItems>
             <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
           </linkerLibItems>
@@ -51,6 +54,10 @@
       <item path="city.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="population.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="population.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tour.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -77,12 +84,21 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="city.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="city.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="population.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="population.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tour.c" ex="false" tool="0" flavor2="0">
       </item>

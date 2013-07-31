@@ -17,10 +17,11 @@ extern "C" {
     typedef struct {
         
         double distance;
-        int path[1];
+        int path[10];
     }Tour;
-    
-    double getDistance(City*, Tour, int);
+    void printArray (int[], int);
+    void shuffle(int *, size_t);
+    double getDistance(City*, Tour*, int);
     void createPath(Tour*, int);
 
 

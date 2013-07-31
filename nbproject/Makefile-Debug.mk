@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/city.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/population.o \
 	${OBJECTDIR}/tour.o
 
 
@@ -73,6 +74,11 @@ ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.c) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/population.o: population.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/population.o population.c
 
 ${OBJECTDIR}/tour.o: tour.c 
 	${MKDIR} -p ${OBJECTDIR}
