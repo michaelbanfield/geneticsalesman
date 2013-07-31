@@ -1,7 +1,7 @@
 geneticsalesman
 ===============
 
-Solves travelling salesman problem using a genetic algorithm.
+Solves traveling salesman problem using a genetic algorithm.
 
 Usage:
 
@@ -9,8 +9,9 @@ Usage:
 	./dist/release/geneticsalesman filename generations cities population
 
 
-The map file should be in the format
+The map file should be in the format, 
 
 	xcoordinate ycoordinate\n
 	...
 	...
+there is a utility to create such a file in the repository CitiesUtility.
