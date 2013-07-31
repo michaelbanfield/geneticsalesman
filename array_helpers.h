@@ -15,7 +15,7 @@ extern "C" {
 #include "city.h"
     
     void init_array_tour(Tour*, int);
-    void init_array_city(City*, int);
+    void init_array_population(Population*, int);
     void put_array(int*, int);
     
     

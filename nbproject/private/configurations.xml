@@ -24,7 +24,6 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 10  20 20</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 10  5 20</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 10  5 20 workfile.map</runcommandpicklistitem>
@@ -34,8 +33,9 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" workfile.map 2</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" workfile.map 5</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" workfile.map 5 10</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" workfile.map 5 10 10</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" workfile.map 5 10</runcommand>
+        <runcommand>"${OUTPUT_PATH}" workfile.map 5 10 10</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

@@ -18,16 +18,16 @@ int getFittest(City* cities, Population* population, int size) {
     return population->fittest;
 }
 
-void initPopulation(Population* population, int size, int max) {
+void initPopulation(Population* population, int numOfPopulation, int numOfCities) {
     int count = 0;
     Tour * ptrTour;
     //population = malloc(sizeof (Population) + size * sizeof (Tour));
-    init_array_population(population, max);
+    init_array_population(population, numOfPopulation);
     
     
-    for (count = 0; count < size; count++) {
+    for (count = 0; count < numOfPopulation; count++) {
         ptrTour = &(population->tours[count]);
-        createPath(ptrTour, max);
+        createPath(ptrTour, numOfCities);
         
     }
 }
@@ -42,14 +42,14 @@ Tour tournament(int size, int max, City* cities) {
     
 }
 
-void evolvePopulation(Population* population, int size, int max, Tour elite, City* cities, int generation) {
+void evolvePopulation(Population* population, int numOfPopulation, int numOfCities, Tour elite, City* cities, int generation) {
     int count = 0, index = 0, mutator = 0;
     Tour parent1, parent2;
    
      
-    initPopulation(population, size, max);
-    for(count = 1; count < size; count++) {
-        shuffle(population->tours[count].path, max);
+    initPopulation(population, numOfPopulation, numOfCities);
+    for(count = 1; count < numOfPopulation; count++) {
+        shuffle(population->tours[count].path, numOfCities);
     }
     population->tours[0] = elite;
     
