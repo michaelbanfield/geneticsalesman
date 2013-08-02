@@ -16,7 +16,7 @@ int getFittest(City* cities, Population* population, int numOfPopulation, int nu
         population->tours[count].distance = getDistance(cities,
                 &population->tours[count], numOfCities);
         //printf("Total length for %d: %f\n", count,
-                population->tours[count].distance);
+                //population->tours[count].distance);
         if (population->tours[count].distance <
                 population->tours[population->fittest].distance) {
             population->fittest = count;
