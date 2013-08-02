@@ -41,6 +41,9 @@ int main(int argc, char** argv) {
 
     while (fscanf(mapFile, "%d %d\n", &cities[i].x, &cities[i].y) == 2) {
         i++;
+        if(i == numOfCities) {
+            break;
+        }
     }
     initPopulation(&population, numOfPopulation, numOfCities);
 
