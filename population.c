@@ -15,7 +15,7 @@ int getFittest(City* cities, Population* population, int numOfPopulation, int nu
     for (count = 0; count < numOfPopulation; count++) {
         population->tours[count].distance = getDistance(cities,
                 &population->tours[count], numOfCities);
-        printf("Total length for %d: %f\n", count,
+        //printf("Total length for %d: %f\n", count,
                 population->tours[count].distance);
         if (population->tours[count].distance <
                 population->tours[population->fittest].distance) {
@@ -97,7 +97,7 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
         tour.path[count] = parent2->path[count2];
     }
     
-    printf("The final array is:");
+    //printf("The final array is:");
     printArray(tour.path, numOfCities);
     
     return tour;

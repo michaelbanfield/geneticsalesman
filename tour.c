@@ -13,10 +13,10 @@ void swap(int *a, int *b) {
 // A utility function to print an array
 
 void printArray(int arr[], int n) {
-    int i = 0;
-    for (i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+    //int i = 0;
+    //for (i = 0; i < n; i++)
+        //printf("%d ", arr[i]);
+    //printf("\n");
 }
 
 void shuffle(int *array, size_t n)
@@ -52,7 +52,7 @@ double getDistance(City* cities, Tour* tour, int numOfCities) {
     double distance = 0;
     City start, end;
     //printf("the path is: ");
-    printArray(tour->path, numOfCities);
+    //printArray(tour->path, numOfCities);
 
     for (count = 0; count < numOfCities - 1; count++) {
         start = cities[tour->path[count]];
