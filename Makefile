@@ -13,12 +13,12 @@ all: $(OBJS) $(TARGET)
 %.o: %.c
 	@echo
 	@echo Compiling $<...
-	$(CC) $(CFLAGS) -c $< -o $@ -pg	
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(TARGET): $(OBJS)
 	@echo
 	@echo Linking...
-	$(CC) $(OBJS) -o bin/$(TARGET) -lm -pg
+	$(CC) $(OBJS) -pg -o bin/$(TARGET) -lm
 
 clean:
 	@echo
