@@ -24,3 +24,4 @@ clean:
 	@echo
 	@echo Cleaning...
 	rm -f bin/*
+	rm -f *.o
