@@ -1,2 +1,6 @@
 *.o
+*.out
+*.output
 nbproject/
+dist/
+build/

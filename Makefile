@@ -18,7 +18,7 @@ all: $(OBJS) $(TARGET)
 $(TARGET): $(OBJS)
 	@echo
 	@echo Linking...
-	$(CC) $(OBJS) -o bin/$(TARGET) -lm
+	$(CC) $(OBJS) -o bin/$(TARGET) -lm -pg
 
 clean:
 	@echo
