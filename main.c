@@ -22,7 +22,7 @@ int numOfCities = 0, numOfPopulation = 0, i = 0;
 int main(int argc, char** argv) {
     FILE* mapFile;
     int generation = 0, maxGeneration = 0;
-    time_t start = time(NULL), end;
+    //time_t start = time(NULL), end;
     
 
     srand(time(NULL));
@@ -64,8 +64,8 @@ int main(int argc, char** argv) {
         printf("The best is: %d with a distance of %f\n", fittest, 
                 population.tours[fittest].distance);
     }
-    end = time(NULL);
-    printf("The time is: %f", difftime(end, start));
+    //end = time(NULL);
+    //printf("The time is: %f", difftime(end, start));
     
     return (EXIT_SUCCESS);
 }

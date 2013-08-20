@@ -108,10 +108,20 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
 void mutatePopulation(Population* population, int numOfPopulation,
         int numOfCities) {
     
-    int count = 0;
+    int count = 0, a = 0, b = 0, temp = 0;
     
     for (count = 1; count < numOfPopulation; count++) {
-        shuffle(population->tours[count].path, numOfCities);
+        a = rand() % numOfCities;
+        b = rand() % numOfCities;
+        temp = (int) population->tours[count].path[a];
+        population->tours[count].path[a] = (int) population->tours[count].path[b];
+        population->tours[count].path[b] = a;
+       
+        
+        
+        
+        
+        //shuffle(population->tours[count].path, numOfCities);
     }
 
 }

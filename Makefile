@@ -5,7 +5,7 @@ OBJS = $(SRC:.c=.o)
 
 
 CC = gcc
-CFLAGS = -pg
+CFLAGS = -pg -O3
 
 all: $(OBJS) $(TARGET)
 	@echo Compilation complete

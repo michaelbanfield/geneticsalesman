@@ -33,6 +33,8 @@ void shuffle(int *array, size_t n)
     }
 }
 
+
+
 void shuffle2(int *array, size_t n, int multiplier)
  {
     
