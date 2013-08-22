@@ -11,10 +11,13 @@
 int getFittest(City* cities, Population* population, int numOfPopulation, int numOfCities) {
     
     int count = 4;
+    
     population->fittest = 0;
+    
     for (count = 0; count < numOfPopulation; count++) {
         population->tours[count].distance = getDistance(cities,
                 &population->tours[count], numOfCities);
+        
         //printf("Total length for %d: %f\n", count,
                 //population->tours[count].distance);
         if (population->tours[count].distance <
@@ -23,6 +26,7 @@ int getFittest(City* cities, Population* population, int numOfPopulation, int nu
 
         }
     }
+    
     return population->fittest;
 }
 
@@ -42,18 +46,45 @@ void initPopulation(Population* population, int numOfPopulation,
 }
 
 Tour tournament(int numOfPopulation, int numOfCities, City* cities) {
+    Tour tour;
+    Tour* ptrTour = &tour;
+    init_array_tour(ptrTour, numOfCities);
     
     Population tournament;
     initPopulation(&tournament, numOfPopulation, numOfCities);
-    return tournament.tours[getFittest(cities, &tournament, 
+    tour = tournament.tours[getFittest(cities, &tournament, 
             numOfPopulation, numOfCities)];
+    //free_population(&tournament, numOfPopulation);
+    
+    return tour;
 }
 
 int find_index(int a[], int num_elements, int value) {
     
-    int i;
-    for (i = 0; i < num_elements; i++) {
+    int i = 0, m = 0;
+    m = num_elements % 5;
+
+    for (i = 0; i < m; i++) {
         if (a[i] == value) {
+            return TRUE; /* it was found */
+        }
+    }
+
+    for (i = m; i < num_elements; i = i + 5) {
+    //for (i = 0; i < num_elements; i++) {
+        if (a[i] == value) {
+            return TRUE; /* it was found */
+        }
+        if (a[i + 1] == value) {
+            return TRUE; /* it was found */
+        }
+        if (a[i + 2] == value) {
+            return TRUE; /* it was found */
+        }
+        if (a[i + 3] == value) {
+            return TRUE; /* it was found */
+        }
+        if (a[i + 4] == value) {
             return TRUE; /* it was found */
         }
     }
@@ -97,6 +128,8 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
         tour.path[count] = parent2->path[count2];
     }
     
+    //tour.path[numOfCities] = tour.path[0];
+    
     //printf("The final array is:");
     printArray(tour.path, numOfCities);
     
@@ -138,6 +171,5 @@ void evolvePopulation(Population* population, int numOfPopulation,
         parent1 = tournament(numOfPopulation, numOfCities, cities);
         parent2 = tournament(numOfPopulation, numOfCities, cities);
         population->tours[count] = crossover(&parent1, &parent2, numOfCities);
-
     }
 }

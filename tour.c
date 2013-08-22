@@ -80,15 +80,31 @@ void createPath(Tour* tour, int numOfCities) {
         tour->path[count] = count;
     }
 
-    int i = 0;
-    for (i = numOfCities - 1; i > 0; i--) {
-        //Pick a random index from 0 to i
-        int j = rand() % (i + 1);
+    int i = 0, m = 0, j = 0;
+    
+    m = numOfCities % 5;
 
-        // Swap arr[i] with the element at random index
+    for (i = 0; i < m; i++) {
+        int j = rand() % (i + 1);
         swap(&tour->path[i], &tour->path[j]);
     }
-    tour->path[numOfCities - 1] = tour->path[0];
+
+    for (i = m; i < numOfCities; i = i + 5) {
+    //for (i = numOfCities - 1; i > 0; i--) {
+        
+        j = rand() % (i + 1);
+        swap(&tour->path[i], &tour->path[j]);
+        j = rand() % (i + 2);
+        swap(&tour->path[i+1], &tour->path[j]);
+        j = rand() % (i + 3);
+        swap(&tour->path[i+2], &tour->path[j]);
+        j = rand() % (i + 4);
+        swap(&tour->path[i+3], &tour->path[j]);
+        j = rand() % (i + 5);
+        swap(&tour->path[i+4], &tour->path[j]);
+        
+    }
+    //tour->path[numOfCities - 1] = tour->path[0];
 
     //printArray(tour->path, numOfCities);
 
