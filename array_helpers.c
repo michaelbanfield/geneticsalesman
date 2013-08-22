@@ -16,9 +16,12 @@ void init_array_population(Population* population, int value) {
 void free_tour(Tour* tour) {
     free(tour->path);
 }
-void free_population(Population* population, int numOfPopulation) {
+void free_population(Population* population, int numOfPopulation, int fittest) {
     int i = 0;
     for(i = 0; i < (numOfPopulation); i++) {
+        if(i == fittest) {
+            continue;
+        }
         free(population->tours[i].path);
         
     }

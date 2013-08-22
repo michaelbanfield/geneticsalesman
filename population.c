@@ -47,14 +47,16 @@ void initPopulation(Population* population, int numOfPopulation,
 
 Tour tournament(int numOfPopulation, int numOfCities, City* cities) {
     Tour tour;
-    Tour* ptrTour = &tour;
-    init_array_tour(ptrTour, numOfCities);
+    int fittest;
+    //Tour* ptrTour = &tour;
+    init_array_tour(&tour, numOfCities);
     
     Population tournament;
     initPopulation(&tournament, numOfPopulation, numOfCities);
-    tour = tournament.tours[getFittest(cities, &tournament, 
-            numOfPopulation, numOfCities)];
-    //free_population(&tournament, numOfPopulation);
+    fittest = getFittest(cities, &tournament, 
+            numOfPopulation, numOfCities);
+    tour = tournament.tours[fittest];
+    free_population(&tournament, numOfPopulation, fittest);
     
     return tour;
 }
