@@ -88,8 +88,9 @@ void createPath(Tour* tour, int numOfCities) {
         // Swap arr[i] with the element at random index
         swap(&tour->path[i], &tour->path[j]);
     }
+    tour->path[numOfCities - 1] = tour->path[0];
 
-    //printArray(tour->path, max);
+    //printArray(tour->path, numOfCities);
 
 
 }
