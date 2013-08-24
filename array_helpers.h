@@ -16,7 +16,6 @@ extern "C" {
     
     void init_array_tour(Tour*, int);
     void init_array_population(Population*, int);
-    void put_array(int*, int);
     void free_population(Population*, int, int);
     void free_tour(Tour*);
     

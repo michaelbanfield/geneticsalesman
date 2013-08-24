@@ -8,31 +8,52 @@
 #define TRUE 1;
 #define FALSE 0;
 
+/*
+ * Function:  getFittest
+ * --------------------
+ * returns the index of the shortest (fittest) tour in a given population
+ *
+ *  cities: an array City structs
+ *  population: the population to be tested
+ *  numOfPopulation: the size of the population
+ *  numOfCities: the number of cities
+ *  
+ *
+ *  returns: the integer index for the fittest Tour struct in the population
+ */
+
 int getFittest(City* cities, Population* population, int numOfPopulation, int numOfCities) {
-    
+
     int count = 4;
-    
+
     population->fittest = 0;
-    
+
     for (count = 0; count < numOfPopulation; count++) {
         population->tours[count].distance = getDistance(cities,
                 &population->tours[count], numOfCities);
-        
-        //printf("Total length for %d: %f\n", count,
-                //population->tours[count].distance);
         if (population->tours[count].distance <
                 population->tours[population->fittest].distance) {
             population->fittest = count;
 
         }
     }
-    
+
     return population->fittest;
 }
 
+/*
+ * Function:  initPopulation
+ * --------------------
+ * initialize the population by allocated array space and creating random tours
+ *
+ *  population: the population to be initialized
+ *  numOfPopulation: the size of the population
+ */
+
+
 void initPopulation(Population* population, int numOfPopulation,
         int numOfCities) {
-    
+
     int count = 0;
     Tour * ptrTour;
     init_array_population(population, numOfPopulation);
@@ -45,24 +66,48 @@ void initPopulation(Population* population, int numOfPopulation,
     }
 }
 
+/*
+ * Function:  tournament
+ * --------------------
+ * creates a population and finds the shortest tour
+ *
+ *  numOfPopulation: size of population
+ *  numOfCities: number of cities
+ *  cities: array of City structs
+ *
+ *  returns:fittest tour
+ */
+
+
 Tour tournament(int numOfPopulation, int numOfCities, City* cities) {
     Tour tour;
     int fittest;
-    //Tour* ptrTour = &tour;
     init_array_tour(&tour, numOfCities);
-    
+
     Population tournament;
     initPopulation(&tournament, numOfPopulation, numOfCities);
-    fittest = getFittest(cities, &tournament, 
+    fittest = getFittest(cities, &tournament,
             numOfPopulation, numOfCities);
     tour = tournament.tours[fittest];
     free_population(&tournament, numOfPopulation, fittest);
-    
+
     return tour;
 }
 
+/*
+ * Function:  find_index
+ * --------------------
+ * finds if an element is in a integer array
+ *
+ *  a: array of ints to be searched
+ *  num_elements: the length of the array
+ *  value: the element being searched for
+ *
+ *  returns:true if the element is in the list, false otherwise
+ */
+
 int find_index(int a[], int num_elements, int value) {
-    
+
     int i = 0, m = 0;
     m = num_elements % 5;
 
@@ -73,30 +118,44 @@ int find_index(int a[], int num_elements, int value) {
     }
 
     for (i = m; i < num_elements; i = i + 5) {
-    //for (i = 0; i < num_elements; i++) {
         if (a[i] == value) {
-            return TRUE; /* it was found */
+            return TRUE;
         }
         if (a[i + 1] == value) {
-            return TRUE; /* it was found */
+            return TRUE;
         }
         if (a[i + 2] == value) {
-            return TRUE; /* it was found */
+            return TRUE;
         }
         if (a[i + 3] == value) {
-            return TRUE; /* it was found */
+            return TRUE;
         }
         if (a[i + 4] == value) {
-            return TRUE; /* it was found */
+            return TRUE;
         }
     }
-    return FALSE; /* if it was not found */
+    return FALSE;
 }
 
+/*
+ * Function:  crossover
+ * --------------------
+ * combines two Tour structs together by taking a subset from one and adding 
+ * the unique elements from the other
+ *
+ *  parent1: tour struct to be combined
+ *  parent2 second tour struct to be combined
+ *  numOfCities: number of elements in a tour
+ *  
+ *
+ *  returns:combined Tour
+ */
+
+
 Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
-    
+
     Tour tour;
-    
+
     init_array_tour(&tour, numOfCities);
     int count = 0, start = rand() % (numOfCities / 2),
             end = (rand() % (numOfCities / 2)) + 5;
@@ -111,16 +170,15 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
 
     for (count = 0; count < start; count++) {
         int count2 = 0;
-        
+
         while (find_index(tour.path, numOfCities, parent2->path[count2])) {
             count2++;
 
         }
-        
+
         tour.path[count] = parent2->path[count2];
     }
-    printArray(tour.path, numOfCities);
-    
+
     for (count = end; count < numOfCities; count++) {
         int count2 = 0;
         while (find_index(tour.path, numOfCities, parent2->path[count2]) == 1) {
@@ -129,46 +187,68 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
 
         tour.path[count] = parent2->path[count2];
     }
-    
-    //tour.path[numOfCities] = tour.path[0];
-    
-    //printf("The final array is:");
-    printArray(tour.path, numOfCities);
-    
+
+
     return tour;
 
 
 }
 
+/*
+ * Function:  mutatePopulation
+ * --------------------
+ * swaps 2 random elements in each tour in a population, except for the first
+ *      tour which is the "elite" tour
+ *
+ *  population: the population to be mutated
+ *  numOfPopulation: number of tours in population
+ *  numofCities: number of elements in a tour
+ *
+ */
+
+
 void mutatePopulation(Population* population, int numOfPopulation,
         int numOfCities) {
-    
+
     int count = 0, a = 0, b = 0, temp = 0;
-    
+
     for (count = 1; count < numOfPopulation; count++) {
         a = rand() % numOfCities;
         b = rand() % numOfCities;
         temp = (int) population->tours[count].path[a];
         population->tours[count].path[a] = (int) population->tours[count].path[b];
         population->tours[count].path[b] = a;
-       
-        
-        
-        
-        
-        //shuffle(population->tours[count].path, numOfCities);
+
+
+
+
+
     }
 
 }
 
+/*
+ * Function:  evolvePopulation
+ * --------------------
+ * takes an initial population and uses tournaments to evolve it
+ *
+ *  population: population to be evolved
+ *  numOfPopulation: number of tours in population
+ *  numOfCities: number of cities in tour
+ *  elite: Tour struct that is shortest of population
+ *  cities: array of City structs
+ *
+ */
+
+
 void evolvePopulation(Population* population, int numOfPopulation,
-        int numOfCities, Tour elite, City* cities, int generation) {
-    
+        int numOfCities, Tour elite, City* cities) {
+
     int count = 0, index = 0, mutator = 0;
     Tour parent1, parent2;
-    
+
     population->tours[0] = elite;
-    
+
     for (count = 1; count < numOfPopulation; count++) {
         parent1 = tournament(numOfPopulation, numOfCities, cities);
         parent2 = tournament(numOfPopulation, numOfCities, cities);

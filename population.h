@@ -21,9 +21,8 @@ extern "C" {
     
     int getFittest(City*, Population*, int, int);
     void mutatePopulation(Population*, int, int);
-    void evolvePopulation(Population*, int, int, Tour, City*, int);
+    void evolvePopulation(Population*, int, int, Tour, City*);
     void initPopulation(Population*, int, int);
-    //int getFittest(Population*, int );
 
 
 

@@ -1,7 +1,7 @@
 /* 
  * File:   city.h
  * Author: michaelb
- *
+ * Header file containing the city struct
  * Created on 29 July 2013, 8:45 PM
  */
 
@@ -14,7 +14,7 @@
 extern "C" {
 #endif
     
-    
+    //the City struct
     typedef struct {
         int x;
         int y;

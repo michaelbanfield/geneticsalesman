@@ -11,17 +11,15 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
+
 #include "city.h"
-    
+
     typedef struct {
-        
         double distance;
         int* path;
-    }Tour;
-    void printArray (int[], int);
+    } Tour;
+    void printArray(int[], int);
     void shuffle(int *, size_t);
-    void shuffle2(int *, size_t, int);
     double getDistance(City*, Tour*, int);
     void createPath(Tour*, int);
 

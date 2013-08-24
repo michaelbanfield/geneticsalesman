@@ -1,7 +1,7 @@
 /* 
  * File:   main.c
  * Author: michaelb
- *
+ * Contents: The main function for the program
  * Created on 29 July 2013, 8:01 PM
  */
 
@@ -19,17 +19,33 @@ City* cities;
 Population population;
 int numOfCities = 0, numOfPopulation = 0, i = 0;
 
+/*
+ * Function:  main
+ * --------------------
+ * the main algorithm control function.
+ * Usage: filename generations cities population 
+ * 
+ *  returns: 
+ *      0 - program exits correctly
+ *      2 - Mapfile doesn't exist
+ *      3 - Wrong number of arguments
+ */
+
 int main(int argc, char** argv) {
+    
+    //Local variables
     FILE* mapFile;
     int generation = 0, maxGeneration = 0;
-    //time_t start = time(NULL), end;
     
-
+    //Seed random number generator based on current time.
     srand(time(NULL));
+    
+    //Read in arguments, return error code's if conditions not met
 
     if (argc > 4) {
         mapFile = fopen(argv[1], "r");
         if (mapFile == NULL) {
+            fprintf(stderr, "Mapfile doesn't exist\n");
             return 2;
         }
         maxGeneration = atoi(argv[2]);
@@ -40,6 +56,8 @@ int main(int argc, char** argv) {
         fprintf(stderr, "Wrong number of arguments\n");
         return 3;
     }
+    
+    //read in *.map file
 
     while (fscanf(mapFile, "%d %d\n", &cities[i].x, &cities[i].y) == 2) {
         i++;
@@ -47,28 +65,27 @@ int main(int argc, char** argv) {
             break;
         }
     }
+    
+    //generate initial population
     initPopulation(&population, numOfPopulation, numOfCities);
-
     int fittest = getFittest(cities, &population, numOfPopulation, 
-            numOfCities);
+            numOfCities); /* find fittest */
     Tour eliteTour = population.tours[fittest];
+    //print out result
     printf("The best is: %d with a distance of %f\n", fittest, 
             eliteTour.distance);
-
+    //iterate through algorithm for number of generations
     for (generation = 0; generation < maxGeneration; generation++) {
         evolvePopulation(&population, numOfPopulation, numOfCities, eliteTour, 
-                cities, generation);
-        
+                cities);
+        //mutate population
         mutatePopulation(&population, numOfPopulation, numOfCities);
-        
         fittest = getFittest(cities, &population, numOfPopulation, numOfCities);
-        
         eliteTour = population.tours[fittest];
+        
         printf("The best is: %d with a distance of %f\n", fittest, 
-                population.tours[fittest].distance);
+                population.tours[fittest].distance); /* print result */
     }
-    //end = time(NULL);
-    //printf("The time is: %f", difftime(end, start));
     
     return (EXIT_SUCCESS);
 }
