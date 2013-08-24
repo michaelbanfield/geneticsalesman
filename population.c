@@ -1,3 +1,12 @@
+
+/* 
+ * File:   population.c
+ * Author: michaelb
+ * Contents: Contains functions related to the population struct
+ * arrays
+ * Created on 29 July 2013, 8:01 PM
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "tour.h"

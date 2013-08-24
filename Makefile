@@ -5,7 +5,7 @@ OBJS = $(SRC:.c=.o)
 
 
 CC = gcc
-CFLAGS = -pg -O3
+CFLAGS = -O3
 
 all: $(OBJS) $(TARGET)
 	@echo Compilation complete
@@ -18,7 +18,7 @@ all: $(OBJS) $(TARGET)
 $(TARGET): $(OBJS)
 	@echo
 	@echo Linking...
-	$(CC) $(OBJS) -pg -o bin/$(TARGET) -lm
+	$(CC) $(OBJS) -o bin/$(TARGET) -lm
 
 clean:
 	@echo

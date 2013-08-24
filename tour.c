@@ -1,3 +1,12 @@
+
+/* 
+ * File:   tour.c
+ * Author: michaelb
+ * Contents: Contains functions related to the tour struct
+ * arrays
+ * Created on 29 July 2013, 8:01 PM
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
