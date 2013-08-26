@@ -33,7 +33,7 @@
 
 int getFittest(City* cities, Population* population, int numOfPopulation, int numOfCities) {
 
-    int count = 4;
+    int count = 0;
 
     population->fittest = 0;
 
@@ -92,15 +92,14 @@ Tour tournament(int numOfPopulation, int numOfCities, City* cities) {
     Tour tour;
     int fittest;
     init_array_tour(&tour, numOfCities);
-
     Population tournament;
+    
     initPopulation(&tournament, numOfPopulation, numOfCities);
     fittest = getFittest(cities, &tournament,
             numOfPopulation, numOfCities);
-    tour = tournament.tours[fittest];
     free_population(&tournament, numOfPopulation, fittest);
 
-    return tour;
+    return tournament.tours[fittest];
 }
 
 /*
@@ -227,11 +226,6 @@ void mutatePopulation(Population* population, int numOfPopulation,
         temp = (int) population->tours[count].path[a];
         population->tours[count].path[a] = (int) population->tours[count].path[b];
         population->tours[count].path[b] = a;
-
-
-
-
-
     }
 
 }

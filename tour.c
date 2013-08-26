@@ -58,11 +58,12 @@ void printArray(int arr[], int n) {
  */
 
 void shuffle(int *array, size_t n) {
+    size_t i = 0, j = 0;
 
     if (n > 1) {
-        size_t i;
+        
         for (i = 0; i < n - 1; i++) {
-            size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+            j = i + rand() / (RAND_MAX / (n - i) + 1);
             int t = array[j];
             array[j] = array[i];
             array[i] = t;
@@ -109,14 +110,13 @@ double getDistance(City* cities, Tour* tour, int numOfCities) {
 
 
 void createPath(Tour* tour, int numOfCities) {
-    int count = 0;
+    int count = 0, i = 0, m = 0, j = 0;
 
     init_array_tour(tour, numOfCities);
     for (count = 0; count < numOfCities; count++) {
         tour->path[count] = count;
     }
 
-    int i = 0, m = 0, j = 0;
 
     m = numOfCities % 5;
 

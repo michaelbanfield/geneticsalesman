@@ -15,9 +15,7 @@
 
 //global variables
 
-City* cities;
-Population population;
-int numOfCities = 0, numOfPopulation = 0, i = 0;
+
 
 /*
  * Function:  main
@@ -35,7 +33,12 @@ int main(int argc, char** argv) {
     
     //Local variables
     FILE* mapFile;
-    int generation = 0, maxGeneration = 0;
+    Tour eliteTour;
+    int generation = 0, maxGeneration = 0, 
+            numOfCities = 0, numOfPopulation = 0, i = 0, fittest = 0;
+    City* cities;
+    Population population;
+     
     
     //Seed random number generator based on current time.
     srand(time(NULL));
@@ -68,9 +71,9 @@ int main(int argc, char** argv) {
     
     //generate initial population
     initPopulation(&population, numOfPopulation, numOfCities);
-    int fittest = getFittest(cities, &population, numOfPopulation, 
+    fittest = getFittest(cities, &population, numOfPopulation, 
             numOfCities); /* find fittest */
-    Tour eliteTour = population.tours[fittest];
+    eliteTour = population.tours[fittest];
     //print out result
     printf("The best is: %d with a distance of %f\n", fittest, 
             eliteTour.distance);
@@ -84,7 +87,7 @@ int main(int argc, char** argv) {
         eliteTour = population.tours[fittest];
         
         printf("The best is: %d with a distance of %f\n", fittest, 
-                population.tours[fittest].distance); /* print result */
+                eliteTour.distance); /* print result */
     }
     
     return (EXIT_SUCCESS);
