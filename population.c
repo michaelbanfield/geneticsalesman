@@ -13,6 +13,8 @@
 #include "city.h"
 #include "population.h"
 #include "array_helpers.h"
+#include <omp.h>
+#include <mpi.h>
 
 #define TRUE 1;
 #define FALSE 0;
@@ -63,16 +65,19 @@ int getFittest(City* cities, Population* population, int numOfPopulation, int nu
 void initPopulation(Population* population, int numOfPopulation,
         int numOfCities) {
 
-    int count = 0;
+    int count;
     Tour * ptrTour;
     init_array_population(population, numOfPopulation);
 
-
     for (count = 0; count < numOfPopulation; count++) {
-        ptrTour = &(population->tours[count]);
-        createPath(ptrTour, numOfCities);
+            ptrTour = &(population->tours[count]);
+            createPath(ptrTour, numOfCities);
 
-    }
+       }
+    
+
+        
+    
 }
 
 /*
@@ -93,7 +98,7 @@ Tour tournament(int numOfPopulation, int numOfCities, City* cities) {
     int fittest;
     init_array_tour(&tour, numOfCities);
     Population tournament;
-    
+
     initPopulation(&tournament, numOfPopulation, numOfCities);
     fittest = getFittest(cities, &tournament,
             numOfPopulation, numOfCities);
@@ -219,7 +224,7 @@ void mutatePopulation(Population* population, int numOfPopulation,
         int numOfCities) {
 
     int count = 0, a = 0, b = 0, temp = 0;
-
+   
     for (count = 1; count < numOfPopulation; count++) {
         a = rand() % numOfCities;
         b = rand() % numOfCities;
@@ -227,6 +232,7 @@ void mutatePopulation(Population* population, int numOfPopulation,
         population->tours[count].path[a] = (int) population->tours[count].path[b];
         population->tours[count].path[b] = a;
     }
+        
 
 }
 
@@ -251,10 +257,16 @@ void evolvePopulation(Population* population, int numOfPopulation,
     Tour parent1, parent2;
 
     population->tours[0] = elite;
-
+    
+    #pragma omp parallel private(count, parent1, parent2)
+{
+#pragma omp for 
     for (count = 1; count < numOfPopulation; count++) {
+     
         parent1 = tournament(numOfPopulation, numOfCities, cities);
         parent2 = tournament(numOfPopulation, numOfCities, cities);
         population->tours[count] = crossover(&parent1, &parent2, numOfCities);
     }
+}
+        
 }

@@ -11,6 +11,7 @@
 #include "city.h"
 #include "tour.h"
 #include "population.h"
+#include <omp.h>
 
 /*
  * Function:  init_array_tour
@@ -66,11 +67,16 @@ void free_tour(Tour* tour) {
 
 void free_population(Population* population, int numOfPopulation, int fittest) {
     int i = 0;
+    
+    #pragma omp parallel private(i)
+{
+#pragma omp for 
     for (i = 0; i < (numOfPopulation); i++) {
-        if (i == fittest) {
-            continue;
+        if (i != fittest) {
+            free(population->tours[i].path);
         }
-        free(population->tours[i].path);
+        
 
     }
+}
 }

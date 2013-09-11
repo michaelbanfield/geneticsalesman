@@ -12,10 +12,10 @@
 #include "tour.h"
 #include "population.h"
 #include "array_helpers.h"
+#include <mpi.h>
+
 
 //global variables
-
-
 
 /*
  * Function:  main
@@ -30,66 +30,81 @@
  */
 
 int main(int argc, char** argv) {
-    
+
     //Local variables
+    time_t timer;
     FILE* mapFile;
     Tour eliteTour;
-    int generation = 0, maxGeneration = 0, 
-            numOfCities = 0, numOfPopulation = 0, i = 0, fittest = 0;
+    int generation = 0, maxGeneration = 0,
+            numOfCities = 0, numOfPopulation = 0, i = 0, fittest = 0, rank = 0;
     City* cities;
     Population population;
-     
-    
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+
     //Seed random number generator based on current time.
     srand(time(NULL));
-    
+    timer = time(NULL);
+
+
+
     //Read in arguments, return error code's if conditions not met
 
-    if (argc > 4) {
-        mapFile = fopen(argv[1], "r");
-        if (mapFile == NULL) {
-            fprintf(stderr, "Mapfile doesn't exist\n");
-            return 2;
+    if (rank == 0) {
+        if (argc > 4) {
+            mapFile = fopen(argv[1], "r");
+            if (mapFile == NULL) {
+                fprintf(stderr, "Mapfile doesn't exist\n");
+                return 2;
+            }
+            maxGeneration = atoi(argv[2]);
+            cities = malloc(sizeof (City) * atoi(argv[3]));
+            numOfCities = atoi(argv[3]);
+            numOfPopulation = atoi(argv[4]);
+        } else {
+            fprintf(stderr, "Wrong number of arguments\n");
+            return 3;
         }
-        maxGeneration = atoi(argv[2]);
-        cities = malloc(sizeof (City) * atoi(argv[3]));
-        numOfCities = atoi(argv[3]);
-        numOfPopulation = atoi(argv[4]);
-    } else {
-        fprintf(stderr, "Wrong number of arguments\n");
-        return 3;
-    }
-    
-    //read in *.map file
 
-    while (fscanf(mapFile, "%d %d\n", &cities[i].x, &cities[i].y) == 2) {
-        i++;
-        if(i == numOfCities) {
-            break;
+        //read in *.map file
+
+        while (fscanf(mapFile, "%d %d\n", &cities[i].x, &cities[i].y) == 2) {
+            i++;
+            if (i == numOfCities) {
+                break;
+            }
         }
+
     }
-    
+
+
+
     //generate initial population
     initPopulation(&population, numOfPopulation, numOfCities);
-    fittest = getFittest(cities, &population, numOfPopulation, 
+    fittest = getFittest(cities, &population, numOfPopulation,
             numOfCities); /* find fittest */
     eliteTour = population.tours[fittest];
     //print out result
-    printf("The best is: %d with a distance of %f\n", fittest, 
+    printf("The best is: %d with a distance of %f\n", fittest,
             eliteTour.distance);
     //iterate through algorithm for number of generations
     for (generation = 0; generation < maxGeneration; generation++) {
-        evolvePopulation(&population, numOfPopulation, numOfCities, eliteTour, 
+        evolvePopulation(&population, numOfPopulation, numOfCities, eliteTour,
                 cities);
         //mutate population
         mutatePopulation(&population, numOfPopulation, numOfCities);
         fittest = getFittest(cities, &population, numOfPopulation, numOfCities);
         eliteTour = population.tours[fittest];
-        
-        printf("The best is: %d with a distance of %f\n", fittest, 
+
+        printf("The best is: %d with a distance of %f\n", fittest,
                 eliteTour.distance); /* print result */
     }
-    
+
+    printf("Time is %d", time(NULL) - timer);
+
+    MPI_Finalize();
+
     return (EXIT_SUCCESS);
 }
 
