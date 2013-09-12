@@ -172,14 +172,17 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
     init_array_tour(&tour, numOfCities);
     int count = 0, count2 = 0, start = rand() % (numOfCities / 2),
             end = (rand() % (numOfCities / 2)) + 5;
+    
     #pragma omp parallel for private(count)
     for (count = 0; count < numOfCities; count++) {
         tour.path[count] = -1;
     }
+    
     #pragma omp parallel for private(count)
     for (count = start; count < end; count++) {
         tour.path[count] = parent1->path[count];
     }
+    
     #pragma omp parallel for private(count, count2)
     for (count = 0; count < start; count++) {
         count2 = 0;
@@ -191,6 +194,7 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
 
         tour.path[count] = parent2->path[count2];
     }
+    
     #pragma omp parallel for private(count, count2)
     for (count = end; count < numOfCities; count++) {
         count2 = 0;

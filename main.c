@@ -36,11 +36,13 @@ int main(int argc, char** argv) {
     FILE* mapFile;
     Tour eliteTour;
     int generation = 0, maxGeneration = 0,
-            numOfCities = 0, numOfPopulation = 0, i = 0, fittest = 0, rank = 0;
+            numOfCities = 0, block = 6, numOfPopulation = 0, i = 0, 
+            fittest = 0, rank = 0, size = 0, node = 1;
     City* cities;
     Population population;
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Status status;
 
 
@@ -79,7 +81,7 @@ int main(int argc, char** argv) {
         }
     }
 
-    if (rank == 0) {
+    if (!rank) {
 
 
 
@@ -93,16 +95,22 @@ int main(int argc, char** argv) {
         printf("The best is: %d with a distance of %f\n", fittest,
                 eliteTour.distance);
         //iterate through algorithm for number of generations
+        
         for (generation = 0; generation < maxGeneration; generation++) {
 
-            evolvePopulation(&population, numOfPopulation, numOfCities, eliteTour,
-                    cities, rank, generation + 1);
+            evolvePopulation(&population, numOfPopulation, numOfCities,
+                    eliteTour, cities, rank, node);
+            node++;
+            if(node >= size) {
+                node = 1;
+            }
             //mutate population
             mutatePopulation(&population, numOfPopulation, numOfCities);
-            fittest = getFittest(cities, &population, numOfPopulation, numOfCities);
+            fittest = getFittest(cities, &population, numOfPopulation,
+                    numOfCities);
             eliteTour = population.tours[fittest];
 
-            if (rank == 0) {
+            if (!rank) {
                 printf("The best is: %d with a distance of %f\n", fittest,
                         eliteTour.distance); /* print result */
             }
@@ -112,29 +120,21 @@ int main(int argc, char** argv) {
 
 
         }
-        if (rank == 0) {
-            printf("Time is %d", time(NULL) - timer);
-            int myN = 6;
-            for (generation = 1; generation < maxGeneration; generation++) {
-            MPI_Send(&myN, 1, MPI_INT, 1, 150, MPI_COMM_WORLD);
-            //MPI_Send(&myN, 1, MPI_INT, 2, 150, MPI_COMM_WORLD);
-            //MPI_Send(&myN, 1, MPI_INT, 3, 150, MPI_COMM_WORLD);
-            //MPI_Send(&myN, 1, MPI_INT, 4, 150, MPI_COMM_WORLD);
-            //MPI_Send(&myN, 1, MPI_INT, 5, 150, MPI_COMM_WORLD);
-            }
 
+        printf("Time is %d", time(NULL) - timer);
+        block = 6;
+        for (node = 1; node < size; node++) {
+            MPI_Send(&block, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
         }
 
 
-    }
 
 
-
-    if (rank != 0) {
+    } else {
         Tour parents[numOfPopulation];
         int block, i;
         while (1) {
-            #pragma omp parallel for private(i)
+#pragma omp parallel for private(i)
             for (i = 0; i < numOfPopulation; i++) {
                 parents[i] = tournament(numOfPopulation, numOfCities, cities);
             }
@@ -142,10 +142,10 @@ int main(int argc, char** argv) {
 
                 MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
                 if (block > 5) {
-                    printf("process end\n");
-                    return(EXIT_SUCCESS);
+                    return (EXIT_SUCCESS);
                 }
-                MPI_Send(parents[i].path, numOfCities, MPI_INT, 0, 100, MPI_COMM_WORLD);
+                MPI_Send(parents[i].path, numOfCities, MPI_INT, 0, 100,
+                        MPI_COMM_WORLD);
 
             }
 
