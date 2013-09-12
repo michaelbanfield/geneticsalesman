@@ -13,12 +13,13 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
+
     //the City struct
+
     typedef struct {
         int x;
         int y;
-    }City;
+    } City;
 
 
 

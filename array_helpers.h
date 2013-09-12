@@ -13,13 +13,14 @@ extern "C" {
 #endif
 #include "tour.h"
 #include "city.h"
-    
+#include "population.h"
+
     void init_array_tour(Tour*, int);
     void init_array_population(Population*, int);
     void free_population(Population*, int, int);
     void free_tour(Tour*);
-    
-    
+
+
 
 
 

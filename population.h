@@ -11,18 +11,19 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
+
 #include "tour.h"
-    
-    typedef struct{
+
+    typedef struct {
         Tour* tours;
         int fittest;
-    }Population;
-    
+    } Population;
+
     int getFittest(City*, Population*, int, int);
     void mutatePopulation(Population*, int, int);
-    void evolvePopulation(Population*, int, int, Tour, City*);
+    void evolvePopulation(Population*, int, int, Tour, City*, int, int);
     void initPopulation(Population*, int, int);
+    Tour tournament(int, int, City*);
 
 
 

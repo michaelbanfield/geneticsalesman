@@ -4,8 +4,8 @@ OBJS = $(SRC:.c=.o)
 
 
 
-CC = mpicc -fopenmp
-CFLAGS = -pg -O3
+CC = mpicc
+CFLAGS = -pg -O3 -std=c99
 
 all: $(OBJS) $(TARGET)
 	@echo Compilation complete

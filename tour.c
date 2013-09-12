@@ -14,6 +14,7 @@
 #include "tour.h"
 #include <time.h>
 #include <omp.h>
+#include "array_helpers.h"
 
 /*
  * Function:  swap
@@ -62,7 +63,7 @@ void shuffle(int *array, size_t n) {
     size_t i = 0, j = 0;
 
     if (n > 1) {
-        
+        #pragma omp parallel for private(i, j, t)
         for (i = 0; i < n - 1; i++) {
             j = i + rand() / (RAND_MAX / (n - i) + 1);
             int t = array[j];
@@ -89,7 +90,7 @@ double getDistance(City* cities, Tour* tour, int numOfCities) {
     int count = 0, section = 0;
     double distance = 0;
     City start, end;
-    #pragma omp parallel for private(count, start, end, section) reduction(+:distance) 
+#pragma omp parallel for private(count, start, end, section) reduction(+:distance) 
     for (count = 0; count < numOfCities - 1; count++) {
         start = cities[tour->path[count]];
         end = cities[tour->path[count + 1]];
@@ -114,46 +115,46 @@ void createPath(Tour* tour, int numOfCities) {
     int count = 0, i = 0, m = 0, j = 0;
 
     init_array_tour(tour, numOfCities);
-    
-    #pragma omp parallel private(count)
-{
+
+#pragma omp parallel private(count)
+    {
 #pragma omp for 
-    for (count = 0; count < numOfCities; count++) {
-        tour->path[count] = count;
+        for (count = 0; count < numOfCities; count++) {
+            tour->path[count] = count;
+        }
     }
-}
-    
+
 
 
     m = numOfCities % 5;
-    
-    #pragma omp parallel private(i, j)
-{
+
+#pragma omp parallel private(i, j)
+    {
 #pragma omp for 
-    for (i = 0; i < m; i++) {
-        int j = rand() % (i + 1);
-        swap(&tour->path[i], &tour->path[j]);
+        for (i = 0; i < m; i++) {
+            int j = rand() % (i + 1);
+            swap(&tour->path[i], &tour->path[j]);
+        }
     }
-}
-    
 
-    #pragma omp parallel private(i, j)
-{
+
+#pragma omp parallel private(i, j)
+    {
 #pragma omp for 
-    for (i = m; i < numOfCities; i = i + 5) {
+        for (i = m; i < numOfCities; i = i + 5) {
 
-        j = rand() % (i + 1);
-        swap(&tour->path[i], &tour->path[j]);
-        j = rand() % (i + 2);
-        swap(&tour->path[i + 1], &tour->path[j]);
-        j = rand() % (i + 3);
-        swap(&tour->path[i + 2], &tour->path[j]);
-        j = rand() % (i + 4);
-        swap(&tour->path[i + 3], &tour->path[j]);
-        j = rand() % (i + 5);
-        swap(&tour->path[i + 4], &tour->path[j]);
+            j = rand() % (i + 1);
+            swap(&tour->path[i], &tour->path[j]);
+            j = rand() % (i + 2);
+            swap(&tour->path[i + 1], &tour->path[j]);
+            j = rand() % (i + 3);
+            swap(&tour->path[i + 2], &tour->path[j]);
+            j = rand() % (i + 4);
+            swap(&tour->path[i + 3], &tour->path[j]);
+            j = rand() % (i + 5);
+            swap(&tour->path[i + 4], &tour->path[j]);
 
+        }
     }
-}
 
 }
