@@ -68,7 +68,7 @@ void initPopulation(Population* population, int numOfPopulation,
     int count;
     Tour * ptrTour;
     init_array_population(population, numOfPopulation);
-    #pragma omp parallel for private(count, ptrTour)
+    //#pragma omp parallel for private(count, ptrTour)
     for (count = 0; count < numOfPopulation; count++) {
         ptrTour = &(population->tours[count]);
         createPath(ptrTour, numOfCities);
@@ -123,13 +123,13 @@ int find_index(int a[], int num_elements, int value) {
 
     int i = 0, m = 0;
     m = num_elements % 5;
-    #pragma omp parallel for private(i)
+    //#pragma omp parallel for private(i)
     for (i = 0; i < m; i++) {
         if (a[i] == value) {
             return TRUE; /* it was found */
         }
     }
-    #pragma omp parallel for private(i)
+    //#pragma omp parallel for private(i)
     for (i = m; i < num_elements; i = i + 5) {
         if (a[i] == value) {
             return TRUE;
@@ -173,17 +173,17 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
     int count = 0, count2 = 0, start = rand() % (numOfCities / 2),
             end = (rand() % (numOfCities / 2)) + 5;
     
-    #pragma omp parallel for private(count)
+    //#pragma omp parallel for private(count)
     for (count = 0; count < numOfCities; count++) {
         tour.path[count] = -1;
     }
     
-    #pragma omp parallel for private(count)
+    //#pragma omp parallel for private(count)
     for (count = start; count < end; count++) {
         tour.path[count] = parent1->path[count];
     }
     
-    #pragma omp parallel for private(count, count2)
+    //#pragma omp parallel for private(count, count2)
     for (count = 0; count < start; count++) {
         count2 = 0;
 
@@ -195,7 +195,7 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
         tour.path[count] = parent2->path[count2];
     }
     
-    #pragma omp parallel for private(count, count2)
+    //#pragma omp parallel for private(count, count2)
     for (count = end; count < numOfCities; count++) {
         count2 = 0;
         while (find_index(tour.path, numOfCities, parent2->path[count2]) == 1) {
@@ -228,7 +228,7 @@ void mutatePopulation(Population* population, int numOfPopulation,
         int numOfCities) {
 
     int count = 0, a = 0, b = 0, temp = 0;
-    #pragma omp parallel for private(count, a, b, temp)
+    //#pragma omp parallel for private(count, a, b, temp)
     for (count = 1; count < numOfPopulation; count++) {
         a = rand() % numOfCities;
         b = rand() % numOfCities;

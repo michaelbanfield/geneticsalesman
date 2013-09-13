@@ -4,7 +4,7 @@ OBJS = $(SRC:.c=.o)
 
 
 
-CC = mpicc
+CC = mpicc -fopenmp
 CFLAGS = -pg -O3 -std=c99
 
 all: $(OBJS) $(TARGET)

@@ -68,9 +68,9 @@ void free_tour(Tour* tour) {
 void free_population(Population* population, int numOfPopulation, int fittest) {
     int i = 0;
 
-#pragma omp parallel private(i)
+//#pragma omp parallel private(i)
     {
-#pragma omp for 
+//#pragma omp for 
         for (i = 0; i < (numOfPopulation); i++) {
             if (i != fittest) {
                 free(population->tours[i].path);

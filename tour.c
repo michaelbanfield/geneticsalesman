@@ -60,13 +60,13 @@ void printArray(int arr[], int n) {
  */
 
 void shuffle(int *array, size_t n) {
-    size_t i = 0, j = 0;
+    size_t i = 0, j = 0, t = 0 ;
 
     if (n > 1) {
-        #pragma omp parallel for private(i, j, t)
+        //#pragma omp parallel for private(i, j, t)
         for (i = 0; i < n - 1; i++) {
             j = i + rand() / (RAND_MAX / (n - i) + 1);
-            int t = array[j];
+            t = array[j];
             array[j] = array[i];
             array[i] = t;
         }
@@ -90,7 +90,7 @@ double getDistance(City* cities, Tour* tour, int numOfCities) {
     int count = 0, section = 0;
     double distance = 0;
     City start, end;
-#pragma omp parallel for private(count, start, end, section) reduction(+:distance) 
+//#pragma omp parallel for private(count, start, end, section) reduction(+:distance) 
     for (count = 0; count < numOfCities - 1; count++) {
         start = cities[tour->path[count]];
         end = cities[tour->path[count + 1]];
@@ -116,9 +116,9 @@ void createPath(Tour* tour, int numOfCities) {
 
     init_array_tour(tour, numOfCities);
 
-#pragma omp parallel private(count)
+//#pragma omp parallel private(count)
     {
-#pragma omp for 
+//#pragma omp for 
         for (count = 0; count < numOfCities; count++) {
             tour->path[count] = count;
         }
@@ -128,9 +128,9 @@ void createPath(Tour* tour, int numOfCities) {
 
     m = numOfCities % 5;
 
-#pragma omp parallel private(i, j)
+//#pragma omp parallel private(i, j)
     {
-#pragma omp for 
+//#pragma omp for 
         for (i = 0; i < m; i++) {
             int j = rand() % (i + 1);
             swap(&tour->path[i], &tour->path[j]);
@@ -138,9 +138,9 @@ void createPath(Tour* tour, int numOfCities) {
     }
 
 
-#pragma omp parallel private(i, j)
+//#pragma omp parallel private(i, j)
     {
-#pragma omp for 
+//#pragma omp for 
         for (i = m; i < numOfCities; i = i + 5) {
 
             j = rand() % (i + 1);
