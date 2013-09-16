@@ -20,10 +20,11 @@ extern "C" {
     } Population;
 
     int getFittest(City*, Population*, int, int);
-    void mutatePopulation(Population*, int, int);
-    void evolvePopulation(Population*, int, int, Tour, City*, int, int);
+    void mutatePopulation(Population*, int, int, int);
+    void evolvePopulation(Population*, int, int, int, City*, int, int);
     void initPopulation(Population*, int, int);
     Tour tournament(int, int, City*);
+    Tour crossover(Tour*, Tour*, int);
 
 
 

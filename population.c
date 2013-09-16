@@ -123,13 +123,11 @@ int find_index(int a[], int num_elements, int value) {
 
     int i = 0, m = 0;
     m = num_elements % 5;
-    //#pragma omp parallel for private(i)
     for (i = 0; i < m; i++) {
         if (a[i] == value) {
             return TRUE; /* it was found */
         }
     }
-    //#pragma omp parallel for private(i)
     for (i = m; i < num_elements; i = i + 5) {
         if (a[i] == value) {
             return TRUE;
@@ -225,11 +223,14 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
 
 
 void mutatePopulation(Population* population, int numOfPopulation,
-        int numOfCities) {
+        int numOfCities, int fittest) {
 
     int count = 0, a = 0, b = 0, temp = 0;
     //#pragma omp parallel for private(count, a, b, temp)
-    for (count = 1; count < numOfPopulation; count++) {
+    for (count = 0; count < numOfPopulation; count++) {
+        if(count == fittest) {
+            continue;
+        }
         a = rand() % numOfCities;
         b = rand() % numOfCities;
         temp = (int) population->tours[count].path[a];
@@ -255,36 +256,35 @@ void mutatePopulation(Population* population, int numOfPopulation,
 
 
 void evolvePopulation(Population* population, int numOfPopulation,
-        int numOfCities, Tour elite, City* cities, int rank, int generation) {
+        int numOfCities, int elite, City* cities, int rank, int node) {
 
 
     MPI_Status status;
 
     int count = 0, index = 0, mutator = 0;
-    Tour parent1, parent2;
-    init_array_tour(&parent1, numOfCities);
-    init_array_tour(&parent2, numOfCities);
-    //printf("The rank is %d\n", rank);
+    int path[numOfCities];
+    //init_array_tour(&parent1, numOfCities);
+    //init_array_tour(&parent2, numOfCities);
     int myN = 5;
 
-    population->tours[0] = elite;
+    //opulation->tours[0].path = elite.path;
 
 
 
 
-    for (count = 1; count < numOfPopulation; count++) {
+    for (count = 0; count < numOfPopulation; count++) {
+        
+        if(count == elite) {
+            continue;
+        }
 
         //parent1 = tournament(numOfPopulation, numOfCities, cities);
         //parent2 = tournament(numOfPopulation, numOfCities, cities);
 
-        MPI_Send(&myN, 1, MPI_INT, generation, 150, MPI_COMM_WORLD);
-        MPI_Recv(parent1.path, numOfCities, MPI_INT, generation, 100, MPI_COMM_WORLD, &status);
-        MPI_Send(&myN, 1, MPI_INT, generation, 150, MPI_COMM_WORLD);
-        MPI_Recv(parent2.path, numOfCities, MPI_INT, generation, 100, MPI_COMM_WORLD, &status);
-
-
-
-        population->tours[count] = crossover(&parent1, &parent2, numOfCities);
+        MPI_Send(&myN, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
+        MPI_Recv(population->tours[count].path, numOfCities, MPI_INT, node, 100, MPI_COMM_WORLD, &status);
+        //MPI_Send(&myN, 1, MPI_INT, generation, 150, MPI_COMM_WORLD);
+        //MPI_Recv(parent2.path, numOfCities, MPI_INT, generation, 100, MPI_COMM_WORLD, &status);
     }
 
 

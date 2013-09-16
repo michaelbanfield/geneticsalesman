@@ -37,18 +37,19 @@ int main(int argc, char** argv) {
     Tour eliteTour;
     int generation = 0, maxGeneration = 0,
             numOfCities = 0, block = 6, numOfPopulation = 0, i = 0, 
-            fittest = 0, rank = 0, size = 0, node = 1;
+            fittest = 0, rank = 0, size = 0, node = 1, segment = 0;
     City* cities;
     Population population;
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Status status;
+    
 
 
     //Seed random number generator based on current time.
-    srand(time(NULL));
-    timer = time(NULL);
+    srand(time(NULL) * (rank + 1));
+    
 
 
 
@@ -80,6 +81,8 @@ int main(int argc, char** argv) {
             break;
         }
     }
+    
+    
 
     if (!rank) {
 
@@ -97,22 +100,29 @@ int main(int argc, char** argv) {
         //iterate through algorithm for number of generations
         
         for (generation = 0; generation < maxGeneration; generation++) {
+            MPI_Recv(&node, 1, MPI_INT, MPI_ANY_SOURCE, 220, MPI_COMM_WORLD, &status);
 
             evolvePopulation(&population, numOfPopulation, numOfCities,
-                    eliteTour, cities, rank, node);
-            node++;
-            if(node >= size) {
-                node = 1;
-            }
+                    fittest, cities, rank, node);
+            int tempint;
+            
+            //node++;
+            //if(node >= size) {
+                //node = 1;
+            //}
             //mutate population
-            mutatePopulation(&population, numOfPopulation, numOfCities);
+            mutatePopulation(&population, numOfPopulation, numOfCities, fittest);
+            //for(tempint = 0; tempint < numOfPopulation; tempint++) {
+                //printf("the distances are %f\n", getDistance(cities, &population.tours[tempint], numOfCities));
+            //}
+            
+            
             fittest = getFittest(cities, &population, numOfPopulation,
                     numOfCities);
-            eliteTour = population.tours[fittest];
 
             if (!rank) {
                 printf("The best is: %d with a distance of %f\n", fittest,
-                        eliteTour.distance); /* print result */
+                       population.tours[fittest].distance); /* print result */
             }
 
 
@@ -121,7 +131,7 @@ int main(int argc, char** argv) {
 
         }
 
-        printf("Time is %d", time(NULL) - timer);
+        
         block = 6;
         for (node = 1; node < size; node++) {
             MPI_Send(&block, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
@@ -131,23 +141,49 @@ int main(int argc, char** argv) {
 
 
     } else {
-        Tour parents[numOfPopulation];
+        Tour parents[numOfPopulation - 1];
+        Tour child, parent1, parent2;
+        init_array_tour(&child, numOfCities);
+        init_array_tour(&parent1, numOfCities);
+        init_array_tour(&parent2, numOfCities);
         int block, i;
+        for (i = 0; i < numOfPopulation - 1; i++) {
+            init_array_tour(&parents[i], numOfCities);
+        }
+        //printf("num of population is: %d", numOfPopulation);
         while (1) {
+            //printf("back here\n");
 #pragma omp parallel for private(i)
-            for (i = 0; i < numOfPopulation; i++) {
-                parents[i] = tournament(numOfPopulation, numOfCities, cities);
+            for (i = 0; i < numOfPopulation - 1; i++) {
+                parent1 = tournament(numOfPopulation, numOfCities, cities);
+                parent2 = tournament(numOfPopulation, numOfCities, cities);
+                parents[i] = crossover(&parent1, &parent2, numOfCities);
             }
-            for (i = 0; i < numOfPopulation; i++) {
+            MPI_Send(&rank, 1, MPI_INT, 0, 220, MPI_COMM_WORLD);
+            //printf("node %d ready!\n", rank);
+            for (i = 0; i < numOfPopulation - 1; i++) {
+                //child = crossover(&parents[i], &parents[i + 1], numOfCities);
+                
+                
 
                 MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
+                if(i == 0) {
+                    //printf("node %d used!\n", rank);
+                    
+                }
                 if (block > 5) {
                     return (EXIT_SUCCESS);
                 }
+
                 MPI_Send(parents[i].path, numOfCities, MPI_INT, 0, 100,
                         MPI_COMM_WORLD);
+                //printf("back here %d\n", i);
+                
 
             }
+            
+            
+            
 
 
 
