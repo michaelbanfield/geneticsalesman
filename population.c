@@ -233,7 +233,8 @@ void mutatePopulation(Population* population, int numOfPopulation,
         a = rand() % numOfCities;
         b = rand() % numOfCities;
         temp = (int) population->tours[count].path[a];
-        population->tours[count].path[a] = (int) population->tours[count].path[b];
+        population->tours[count].path[a] = 
+                (int) population->tours[count].path[b];
         population->tours[count].path[b] = a;
     }
 
@@ -244,23 +245,25 @@ void mutatePopulation(Population* population, int numOfPopulation,
  * Function:  evolvePopulation
  * --------------------
  * takes an initial population and uses tournaments to evolve it
- *
+ * 
+ * *Parralel Update*
+ * 
+ * Now retrieves paths from node specified in argument node
+ * 
  *  population: population to be evolved
  *  numOfPopulation: number of tours in population
  *  numOfCities: number of cities in tour
  *  elite: Tour struct that is shortest of population
- *  cities: array of City structs
+ *  node: rank to get paths from
  *
  */
 
 
 void evolvePopulation(Population* population, int numOfPopulation,
-        int numOfCities, int elite, City* cities, int rank, int node) {
-
-
+        int numOfCities, int elite, int node) {
+    
     MPI_Status status;
-
-    int count = 0, myN = 5;
+    int count = 0, request= 1;
     
     for (count = 0; count < numOfPopulation; count++) {
         
@@ -268,8 +271,9 @@ void evolvePopulation(Population* population, int numOfPopulation,
             continue;
         }
 
-        MPI_Send(&myN, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
-        MPI_Recv(population->tours[count].path, numOfCities, MPI_INT, node, 100, MPI_COMM_WORLD, &status);
+        MPI_Send(&request, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
+        MPI_Recv(population->tours[count].path, numOfCities, MPI_INT, 
+                node, 100, MPI_COMM_WORLD, &status);
     }
 
 
