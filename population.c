@@ -68,7 +68,6 @@ void initPopulation(Population* population, int numOfPopulation,
     int count;
     Tour * ptrTour;
     init_array_population(population, numOfPopulation);
-    //#pragma omp parallel for private(count, ptrTour)
     for (count = 0; count < numOfPopulation; count++) {
         ptrTour = &(population->tours[count]);
         createPath(ptrTour, numOfCities);
@@ -171,17 +170,17 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
     int count = 0, count2 = 0, start = rand() % (numOfCities / 2),
             end = (rand() % (numOfCities / 2)) + 5;
     
-    //#pragma omp parallel for private(count)
+
     for (count = 0; count < numOfCities; count++) {
         tour.path[count] = -1;
     }
     
-    //#pragma omp parallel for private(count)
+
     for (count = start; count < end; count++) {
         tour.path[count] = parent1->path[count];
     }
     
-    //#pragma omp parallel for private(count, count2)
+
     for (count = 0; count < start; count++) {
         count2 = 0;
 
@@ -193,7 +192,7 @@ Tour crossover(Tour* parent1, Tour* parent2, int numOfCities) {
         tour.path[count] = parent2->path[count2];
     }
     
-    //#pragma omp parallel for private(count, count2)
+
     for (count = end; count < numOfCities; count++) {
         count2 = 0;
         while (find_index(tour.path, numOfCities, parent2->path[count2]) == 1) {
@@ -226,7 +225,7 @@ void mutatePopulation(Population* population, int numOfPopulation,
         int numOfCities, int fittest) {
 
     int count = 0, a = 0, b = 0, temp = 0;
-    //#pragma omp parallel for private(count, a, b, temp)
+
     for (count = 0; count < numOfPopulation; count++) {
         if(count == fittest) {
             continue;
@@ -261,30 +260,16 @@ void evolvePopulation(Population* population, int numOfPopulation,
 
     MPI_Status status;
 
-    int count = 0, index = 0, mutator = 0;
-    int path[numOfCities];
-    //init_array_tour(&parent1, numOfCities);
-    //init_array_tour(&parent2, numOfCities);
-    int myN = 5;
-
-    //opulation->tours[0].path = elite.path;
-
-
-
-
+    int count = 0, myN = 5;
+    
     for (count = 0; count < numOfPopulation; count++) {
         
         if(count == elite) {
             continue;
         }
 
-        //parent1 = tournament(numOfPopulation, numOfCities, cities);
-        //parent2 = tournament(numOfPopulation, numOfCities, cities);
-
         MPI_Send(&myN, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
         MPI_Recv(population->tours[count].path, numOfCities, MPI_INT, node, 100, MPI_COMM_WORLD, &status);
-        //MPI_Send(&myN, 1, MPI_INT, generation, 150, MPI_COMM_WORLD);
-        //MPI_Recv(parent2.path, numOfCities, MPI_INT, generation, 100, MPI_COMM_WORLD, &status);
     }
 
 
