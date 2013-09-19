@@ -105,18 +105,8 @@ int main(int argc, char** argv) {
             evolvePopulation(&population, numOfPopulation, numOfCities,
                     fittest, cities, rank, node);
             int tempint;
-            
-            //node++;
-            //if(node >= size) {
-                //node = 1;
-            //}
             //mutate population
             mutatePopulation(&population, numOfPopulation, numOfCities, fittest);
-            //for(tempint = 0; tempint < numOfPopulation; tempint++) {
-                //printf("the distances are %f\n", getDistance(cities, &population.tours[tempint], numOfCities));
-            //}
-            
-            
             fittest = getFittest(cities, &population, numOfPopulation,
                     numOfCities);
 
@@ -150,9 +140,7 @@ int main(int argc, char** argv) {
         for (i = 0; i < numOfPopulation - 1; i++) {
             init_array_tour(&parents[i], numOfCities);
         }
-        //printf("num of population is: %d", numOfPopulation);
         while (1) {
-            //printf("back here\n");
 #pragma omp parallel for private(i)
             for (i = 0; i < numOfPopulation - 1; i++) {
                 parent1 = tournament(numOfPopulation, numOfCities, cities);
@@ -160,25 +148,14 @@ int main(int argc, char** argv) {
                 parents[i] = crossover(&parent1, &parent2, numOfCities);
             }
             MPI_Send(&rank, 1, MPI_INT, 0, 220, MPI_COMM_WORLD);
-            //printf("node %d ready!\n", rank);
             for (i = 0; i < numOfPopulation - 1; i++) {
-                //child = crossover(&parents[i], &parents[i + 1], numOfCities);
-                
-                
-
                 MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
-                if(i == 0) {
-                    //printf("node %d used!\n", rank);
-                    
-                }
                 if (block > 5) {
                     return (EXIT_SUCCESS);
                 }
 
                 MPI_Send(parents[i].path, numOfCities, MPI_INT, 0, 100,
                         MPI_COMM_WORLD);
-                //printf("back here %d\n", i);
-                
 
             }
             
