@@ -102,13 +102,10 @@ int main(int argc, char** argv) {
             path[i] = population.tours[fittest].path[i];
             
         }
-        //path = population.tours[fittest].path;
         oldLength = population.tours[fittest].distance;
 
-        //iterate through algorithm for number of generations
 
         for (generation = 0; generation < maxGeneration; generation++) {
-            //printf("get here\n");
             MPI_Recv(&node, 1, MPI_INT, MPI_ANY_SOURCE, 220, MPI_COMM_WORLD,
                     &status);
             
@@ -117,27 +114,16 @@ int main(int argc, char** argv) {
            
             MPI_Recv(&newLength, 1, MPI_DOUBLE, node, 230, MPI_COMM_WORLD,
                     &status);
-            //printf("10\n");
             if(newLength < oldLength ) {
                  
                 MPI_Send(&request, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
                 MPI_Recv(&path, numOfCities, MPI_INT, node, 240, MPI_COMM_WORLD,
                     &status);
-                //printf("get here\n");
                 oldLength = newLength;
                 
             } else {
                 MPI_Send(&zeroRequest, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
             }
-            
-            /*
-            evolvePopulation(&population, numOfPopulation, numOfCities,
-                    fittest, node);
-            //mutate population
-            mutatePopulation(&population, numOfPopulation, numOfCities, fittest);
-            fittest = getFittest(cities, &population, numOfPopulation,
-                    numOfCities);
-             */
 
             if (!rank) {
                 printf("Fittest from generation %d has distance of %f\n",
@@ -166,7 +152,6 @@ int main(int argc, char** argv) {
         }
 
         while (1) {
-            //printf("node start\n");
 
 #pragma omp parallel for private(i)
             for (i = 0; i < numOfPopulation; i++) {
@@ -177,36 +162,20 @@ int main(int argc, char** argv) {
             mutatePopulation(&population, numOfPopulation, numOfCities, fittest);
             fittest = getFittest(cities, &population, numOfPopulation,
                     numOfCities);
-            //printf("1\n");
+
             MPI_Send(&rank, 1, MPI_INT, 0, 220, MPI_COMM_WORLD);
-            //printf("2\n");
+
             MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
             if (!block) {
                     return (EXIT_SUCCESS);
                 }
            
             MPI_Send(&population.tours[fittest].distance, 1, MPI_DOUBLE, 0, 230, MPI_COMM_WORLD);
-            //printf("Past block\n");
             MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
             if(block) {
                 MPI_Send(population.tours[fittest].path, numOfCities, MPI_INT, 0, 240,
                         MPI_COMM_WORLD);
             }
-            
-             
-              //printf("3 : %d\n", rank);
-            /*
-            for (i = 0; i < numOfPopulation - 1; i++) {
-                MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
-                if (!block) {
-                    return (EXIT_SUCCESS);
-                }
-
-                MPI_Send(paths[i].path, numOfCities, MPI_INT, 0, 100,
-                        MPI_COMM_WORLD);
-
-            }
-             */
         }
 
     }
