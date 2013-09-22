@@ -5,6 +5,8 @@ OBJS = $(SRC:.c=.o)
 
 
 CC = mpicc -fopenmp
+# line below for deployment on barrine
+#CC = mpicc -openmp
 CFLAGS = -pg -O3 -std=c99
 
 all: $(OBJS) $(TARGET)

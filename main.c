@@ -15,9 +15,6 @@
 #include <mpi.h>
 #include <omp.h>
 
-
-//global variables
-
 /*
  * Function:  main
  * --------------------
@@ -35,12 +32,12 @@ int main(int argc, char** argv) {
 
     //Local variables
     FILE* mapFile;
-    Tour eliteTour;
     int generation = 0, maxGeneration = 0,
             numOfCities = 0, block = 0, numOfPopulation = 0, i = 0,
             fittest = 0, rank = 0, size = 0, node = 1;
     City* cities;
     Population population;
+    
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
@@ -89,18 +86,17 @@ int main(int argc, char** argv) {
     if (!rank) { /*master node */
 
         //generate initial population
-        
+
         int path[numOfCities], request = 1, zeroRequest = 0;
         double newLength = 0, oldLength = 0;
-        
 
         initPopulation(&population, numOfPopulation, numOfCities);
         fittest = getFittest(cities, &population, numOfPopulation,
                 numOfCities); /* find fittest */
-        
-        for(i = 0; i < numOfCities; i++) {
+
+        for (i = 0; i < numOfCities; i++) {
             path[i] = population.tours[fittest].path[i];
-            
+
         }
         oldLength = population.tours[fittest].distance;
 
@@ -108,28 +104,28 @@ int main(int argc, char** argv) {
         for (generation = 0; generation < maxGeneration; generation++) {
             MPI_Recv(&node, 1, MPI_INT, MPI_ANY_SOURCE, 220, MPI_COMM_WORLD,
                     &status);
-            
+
             MPI_Send(&request, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
-            
-           
+
+
             MPI_Recv(&newLength, 1, MPI_DOUBLE, node, 230, MPI_COMM_WORLD,
                     &status);
-            if(newLength < oldLength ) {
-                 
+            if (newLength < oldLength) {
+
                 MPI_Send(&request, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
                 MPI_Recv(&path, numOfCities, MPI_INT, node, 240, MPI_COMM_WORLD,
-                    &status);
+                        &status);
                 oldLength = newLength;
-                
+
             } else {
                 MPI_Send(&zeroRequest, 1, MPI_INT, node, 150, MPI_COMM_WORLD);
             }
 
-            if (!rank) {
-                printf("Fittest from generation %d has distance of %f\n",
-                        generation,
-                        oldLength); /* print result */
-            }
+
+            printf("Fittest from generation %d has distance of %f\n",
+                    generation,
+                    oldLength); /* print result */
+
         }
 
         for (node = 1; node < size; node++) { /*shutdown message */
@@ -141,10 +137,10 @@ int main(int argc, char** argv) {
 
     } else { /*slave node */
 
-        Tour paths[numOfPopulation - 1], parent1, parent2;
+        Tour parent1, parent2;
+        
         init_array_tour(&parent1, numOfCities);
         init_array_tour(&parent2, numOfCities);
-        
         init_array_population(&population, numOfPopulation);
 
         for (i = 0; i < numOfPopulation; i++) {
@@ -159,27 +155,30 @@ int main(int argc, char** argv) {
                 parent2 = tournament(numOfPopulation, numOfCities, cities);
                 population.tours[i] = crossover(&parent1, &parent2, numOfCities);
             }
+            
             mutatePopulation(&population, numOfPopulation, numOfCities, fittest);
             fittest = getFittest(cities, &population, numOfPopulation,
                     numOfCities);
 
             MPI_Send(&rank, 1, MPI_INT, 0, 220, MPI_COMM_WORLD);
-
             MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
+            
             if (!block) {
-                    return (EXIT_SUCCESS);
-                }
-           
-            MPI_Send(&population.tours[fittest].distance, 1, MPI_DOUBLE, 0, 230, MPI_COMM_WORLD);
+                return (EXIT_SUCCESS);
+            }
+
+            MPI_Send(&population.tours[fittest].distance, 1, MPI_DOUBLE, 
+                    0, 230, MPI_COMM_WORLD);
             MPI_Recv(&block, 1, MPI_INT, 0, 150, MPI_COMM_WORLD, &status);
-            if(block) {
-                MPI_Send(population.tours[fittest].path, numOfCities, MPI_INT, 0, 240,
+            
+            if (block) {
+                MPI_Send(population.tours[fittest].path, numOfCities, 
+                        MPI_INT, 0, 240,
                         MPI_COMM_WORLD);
             }
         }
 
     }
-
 
     MPI_Finalize();
 
